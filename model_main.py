@@ -3,6 +3,7 @@ import os
 import librosa
 import numpy as np
 import tensorflow as tf
+import matplotlib.pyplot as plt
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
@@ -49,6 +50,11 @@ def load_and_split_data(target_size = (224,224)):
     # Sprawdzenie rozmiarów zbiorów danych
     print("Rozmiar zbioru treningowego:", X_train.shape)
     print("Rozmiar zbioru testowego:", X_test.shape)
+    print("Ilość rozpatrywanych klas : ", len(class_names))
+
+    # Zmiana numerów labels na wektory
+    y_train = tf.keras.utils.to_categorical(y_train, num_classes = len(class_names))
+    y_test = tf.keras.utils.to_categorical(y_test, num_classes = len(class_names))
 
     return X_train, X_test, y_train, y_test, len(class_names)
 
@@ -66,7 +72,7 @@ def create_model(target_shape=INPUT_SHAPE,output_size=2):
     model.add(layers.Flatten())
     model.add(layers.Dense(512, activation='relu'))
     model.add(layers.Dense(256, activation='relu'))
-    model.add(layers.Dense(output_size, activation='softmax')) # Warstwa wyjściowa
+    model.add(layers.Dense(units = output_size, activation='softmax')) # Warstwa wyjściowa
 
     model.compile(
         optimizer = tf.keras.optimizers.Adam(learning_rate = 0.001),
@@ -77,31 +83,79 @@ def create_model(target_shape=INPUT_SHAPE,output_size=2):
     return model
 
 
+def show_results(hist=None):
+
+    plt.figure(figsize=(15,12))
+    # Accuracy
+    plt.subplot(2,2,1)
+    plt.title("Accuracy")
+    plt.plot(hist.history['accuracy'],'r',label="accuracy")
+    plt.plot(hist.history['val_accuracy'],'b',label="val_accuracy")
+    plt.xlabel("Epoch #")
+    plt.ylabel("Accuracy")
+    plt.legend()
+
+    # Loss
+    plt.subplot(2,2,2)
+    plt.title("Loss")
+    plt.plot(hist.history['loss'],'r',label="loss")
+    plt.plot(hist.history['val_loss'],'b',label="val_loss")
+    plt.xlabel("Epoch #")
+    plt.ylabel("Loss")
+    plt.legend()
+
+    # Precision
+    plt.subplot(2,2,3)
+    plt.title("Precision")
+    plt.plot(hist.history['precision'],'r',label="precision")
+    plt.plot(hist.history['val_precision'],'b',label="val_precision")
+    plt.xlabel("Epoch #")
+    plt.ylabel("Precision")
+    plt.legend()
+
+    # Recall
+    plt.subplot(2,2,4)
+    plt.title("Recall")
+    plt.plot(hist.history['recall'],'r',label="recall")
+    plt.plot(hist.history['val_recall'],'b',label="val_recall")
+    plt.xlabel("Epoch #")
+    plt.ylabel("Recall")
+    plt.legend()
+        
+    plt.show()
+
+
 if __name__ == "__main__":
 
     # Wczytanie danych
-    X_train, X_test, y_train, y_test, number_of_classes = load_and_split_data(target_size = INPUT_SHAPE)
+    X_train, X_test, y_train, y_test, num_of_classes = load_and_split_data(target_size = INPUT_SHAPE)
 
     # Tworzenie modelu
-    cnn_model = create_model(target_shape = INPUT_SHAPE, output_size = number_of_classes)
+    cnn_model = create_model(target_shape = INPUT_SHAPE, output_size = num_of_classes)
 
     #Wyświetalanie podsumowania modelu
     #cnn_model.summary()
 
+    # Trenowanie modelu
+    TRAIN_EPOCHS = 3
+    BATCH_SIZE = 3
 
-# Trenowanie modelu
+    train_history = cnn_model.fit(x = X_train,
+                                  y = y_train,
+                                  batch_size = BATCH_SIZE,
+                                  epochs = TRAIN_EPOCHS,
+                                  validation_data = (X_test,y_test))
+
+    # Wyświetlanie wyników treningu
+    show_results(train_history)
+
+    # Ewaluacja modelu
 
 
 
-# Ewaluacja modelu
+    # Przykładowa predykcja
 
 
-
-# Przykładowa predykcja
-
-
-
-
-# Zapis modelu
+    # Zapis modelu
 
 
