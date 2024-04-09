@@ -4,6 +4,7 @@ import librosa
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
+import seaborn as sns
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
@@ -18,7 +19,6 @@ from tensorflow.keras.layers import Dense, Flatten, Dropout, Activation, LSTM, S
 # Stałe wartosci
 BASE_PATH = './data/spectograms'
 INPUT_SHAPE = (224,224)
-
 
 def load_and_split_data(target_size = (224,224)):
 
@@ -56,12 +56,13 @@ def load_and_split_data(target_size = (224,224)):
     y_train = tf.keras.utils.to_categorical(y_train, num_classes = len(class_names))
     y_test = tf.keras.utils.to_categorical(y_test, num_classes = len(class_names))
 
-    return X_train, X_test, y_train, y_test, len(class_names)
+    return X_train, X_test, y_train, y_test, len(class_names), class_names
 
 
 def create_model(target_shape=INPUT_SHAPE,output_size=2):
     model = tf.keras.models.Sequential()
-    model.add(layers.Conv2D(8, (3, 3), padding='same',activation='relu', input_shape = (target_shape[0],target_shape[1],3) ))
+    model.add( Input(shape = (target_shape[0],target_shape[1],3)))
+    model.add(layers.Conv2D(8, (3, 3), padding='same',activation='relu'))
     model.add(layers.MaxPooling2D(pool_size=(2,2)))
     model.add(layers.Conv2D(16, (3, 3), padding='same',activation='relu'))
     model.add(layers.MaxPooling2D(pool_size=(2,2)))
@@ -125,10 +126,34 @@ def show_results(hist=None):
     plt.show()
 
 
+def test_model(model,X_test,y_test):
+
+    y_pred = np.argmax(model.predict(X_test), axis= 1)
+
+    test_acc = sum(y_pred == np.argmax(y_test, axis= 1)) / len(y_test)
+
+    print(f"Accuracy model: {np.round(test_acc * 100,2)} %")
+
+    return y_pred
+
+
+def show_confusion_matrix(y_true, y_pred, class_names):
+    confusion_mtx = tf.math.confusion_matrix(np.argmax(y_true, axis = 1), y_pred)
+
+    plt.figure(figsize=(10, 6))
+    sns.heatmap(confusion_mtx,
+                xticklabels=class_names,
+                yticklabels=class_names,
+                annot=True, fmt='g')
+    plt.xlabel('Prediction')
+    plt.ylabel('Label')
+    plt.show()
+
+
 if __name__ == "__main__":
 
     # Wczytanie danych
-    X_train, X_test, y_train, y_test, num_of_classes = load_and_split_data(target_size = INPUT_SHAPE)
+    X_train, X_test, y_train, y_test, num_of_classes, class_names = load_and_split_data(target_size = INPUT_SHAPE)
 
     # Tworzenie modelu
     cnn_model = create_model(target_shape = INPUT_SHAPE, output_size = num_of_classes)
@@ -137,7 +162,7 @@ if __name__ == "__main__":
     #cnn_model.summary()
 
     # Trenowanie modelu
-    TRAIN_EPOCHS = 3
+    TRAIN_EPOCHS = 2
     BATCH_SIZE = 3
 
     train_history = cnn_model.fit(x = X_train,
@@ -150,8 +175,10 @@ if __name__ == "__main__":
     show_results(train_history)
 
     # Ewaluacja modelu
+    y_pred = test_model(cnn_model,X_test,y_test)
 
-
+    # Wyświetlenie confision_matrix
+    show_confusion_matrix(y_test,y_pred,class_names)
 
     # Przykładowa predykcja
 
