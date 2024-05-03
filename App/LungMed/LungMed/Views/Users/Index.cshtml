@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<ApplicationUser>
+@{
+    ViewData["Tittle"] = "System Users";
+}
+<h1>Users</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>Create New User</a>
+</p>
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">List</h3>
+    </div>
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Role Name</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modeliteam => item.FirstName)</td>
+                        <td>@Html.DisplayFor(modeliteam => item.LastName)</td>
+                        <td>@Html.DisplayFor(modeliteam => item.Role.Name)</td>
+                        <td>@Html.DisplayFor(modeliteam => item.Email)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
