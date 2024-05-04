@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LungMed.Data;
 using LungMed.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LungMed.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class DoctorsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -98,6 +100,10 @@ namespace LungMed.Controllers
                 try
                 {
                     _context.Update(doctor);
+                    var user = await _context.Users.FirstOrDefaultAsync(u => u.DoctorId == doctor.Id);
+                    user.FirstName = doctor.FirstName;
+                    user.LastName = doctor.LastName;
+                    _context.Update(user);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

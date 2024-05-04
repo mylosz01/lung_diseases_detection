@@ -32,5 +32,11 @@ namespace LungMed.ViewModels
 
         public string? RoleId { get; set; }
 
+        public string? Doctor { get; set; }
+
+        public string? Patient { get; set; }
+
+        public string PersonalNumber { get; set; }
+
     }
 }

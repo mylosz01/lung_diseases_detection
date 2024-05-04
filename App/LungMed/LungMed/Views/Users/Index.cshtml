@@ -7,7 +7,10 @@
 
 <p>
     <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>Create New User</a>
+    <a asp-action="CreateDoctor" class="btn btn-primary"><i class="fa fa-plus"></i>Create New User - Doctor</a>
+    <a asp-action="CreatePatient" class="btn btn-primary"><i class="fa fa-plus"></i>Create New User - Patient</a>
 </p>
+
 
 
 <div class="card">
@@ -20,9 +23,10 @@
                 <tr>
                     <th>Name</th>
                     <th>Surname</th>
+                    <th>Doctor ID</th>
+                    <th>Patient ID</th>
                     <th>Role Name</th>
                     <th>Email</th>
-                    <th>Edit</th>
                     <th>Delete</th>
                 </tr>
             </thead>
@@ -32,11 +36,11 @@
                     <tr>
                         <td>@Html.DisplayFor(modeliteam => item.FirstName)</td>
                         <td>@Html.DisplayFor(modeliteam => item.LastName)</td>
+                        <td>@Html.DisplayFor(modeliteam => item.DoctorId)</td>
+                        <td>@Html.DisplayFor(modeliteam => item.PatientId)</td>
                         <td>@Html.DisplayFor(modeliteam => item.Role.Name)</td>
                         <td>@Html.DisplayFor(modeliteam => item.Email)</td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-                        </td>
+                        
                         <td>
                             <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                         </td>

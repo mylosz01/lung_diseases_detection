@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LungMed.Data;
 using LungMed.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LungMed.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class HealthCardsController : Controller
     {
         private readonly ApplicationDbContext _context;

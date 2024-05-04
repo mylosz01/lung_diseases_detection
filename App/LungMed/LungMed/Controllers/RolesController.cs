@@ -123,6 +123,14 @@ namespace LungMed.Controllers
             result.Name = model.RoleName;
 
 
+            string rola = _context.Roles.FirstOrDefault(r => r.Id == model.Id)?.NormalizedName;
+
+            var usersInRole = await _userManager.GetUsersInRoleAsync(rola);
+            if (usersInRole.Any())
+            {
+                return RedirectToAction("Index");
+            }
+
             var finalresult = await _roleManager.DeleteAsync(result);
 
             if (finalresult.Succeeded)
