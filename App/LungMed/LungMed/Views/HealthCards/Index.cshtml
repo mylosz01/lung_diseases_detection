@@ -1,40 +1,31 @@
 ﻿@model IEnumerable<LungMed.Models.HealthCard>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Health Cards";
 }
 
-<h1>Index</h1>
+<h1>Health Cards</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Add a new health card</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Medicines)
+                @Html.DisplayNameFor(model => model.PatientId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Diseases)
+                @Html.DisplayNameFor(model => model.Patient.FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Allergies)
+                @Html.DisplayNameFor(model => model.Patient.LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BleedingDisorders)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pregnancy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PregnancyWeek)
+                @Html.DisplayNameFor(model => model.Patient.PersonalNumber)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patient)
             </th>
             <th></th>
         </tr>
@@ -43,28 +34,19 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Medicines)
+                @Html.DisplayFor(modelItem => item.PatientId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Diseases)
+                @Html.DisplayFor(modelItem => item.Patient.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Allergies)
+                @Html.DisplayFor(modelItem => item.Patient.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BleedingDisorders)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pregnancy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PregnancyWeek)
+                @Html.DisplayFor(modelItem => item.Patient.PersonalNumber)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Patient.Id)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

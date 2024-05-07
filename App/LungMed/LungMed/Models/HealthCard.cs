@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using LungMed.Validators;
 
 namespace LungMed.Models
 {
@@ -15,6 +16,7 @@ namespace LungMed.Models
         [Display(Name = "Pregnancy week")]
         public int? PregnancyWeek { get; set; }
         [DataType(DataType.Date)]
+        [DateBeforeTodayAttribute]
         public DateTime Date { get; set; }
         [ForeignKey("Patient")]
         [Required]

@@ -50,7 +50,7 @@ namespace LungMed.Controllers
         // GET: HealthCards/Create
         public IActionResult Create()
         {
-            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "Id");
+            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "FullNameWithIdAndPersonal");
             return View();
         }
 
@@ -67,7 +67,7 @@ namespace LungMed.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "Id", healthCard.PatientId);
+            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "FullNameWithIdAndPersonal");
             return View(healthCard);
         }
 
