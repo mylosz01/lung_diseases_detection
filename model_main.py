@@ -1,6 +1,6 @@
 # Import biblotek
 import os
-from datetime import date
+from datetime import datetime
 import librosa
 import numpy as np
 import tensorflow as tf
@@ -118,6 +118,11 @@ def show_results(hist=None):
     plt.xlabel("Epoch #")
     plt.ylabel("Recall")
     plt.legend()
+
+    # Save plot
+    now = datetime.now()
+    current_time = now.strftime("%d_%m_%Y-%H_%M")
+    plt.savefig(f'./results/res_{current_time}.png')
         
     plt.show()
 
@@ -143,6 +148,12 @@ def show_confusion_matrix(y_true, y_pred, class_names):
                 annot=True, fmt='g')
     plt.xlabel('Prediction')
     plt.ylabel('Label')
+    
+    # Save confusion matrix
+    now = datetime.now()
+    current_time = now.strftime("%d_%m_%Y-%H_%M")
+    plt.savefig(f'./results/confMatrix_{current_time}.png')
+
     plt.show()
 
 
@@ -181,7 +192,7 @@ if __name__ == "__main__":
 
 
     # Zapis modelu
-    now = date.today()
+    now = datetime.now()
     current_time = now.strftime("%d_%m_%Y-%H_%M")
     cnn_model.save(f"./models/model_{current_time}__{TRAIN_EPOCHS}__{result_acc:.04f}.keras")
     print("Model saved...")
