@@ -1,5 +1,6 @@
 # Import biblotek
 import os
+from datetime import date
 import librosa
 import numpy as np
 import tensorflow as tf
@@ -7,24 +8,17 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from sklearn.model_selection import train_test_split
-from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
 from tensorflow.keras import Input
-from tensorflow.keras.models import Model
-from tensorflow.keras.callbacks import ModelCheckpoint, ReduceLROnPlateau, EarlyStopping
-from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.layers import Dense, Flatten, Dropout, Activation, LSTM, SimpleRNN, Conv1D, Input, BatchNormalization
-
 
 # Stałe wartosci
-BASE_PATH = './data/spectograms'
+BASE_PATH = './data/spectograms/'
 INPUT_SHAPE = (224,224)
 
 def load_and_split_data(target_size = (224,224)):
 
     spectogram_array = []
     spectogram_labels = []
-    first = False
 
     class_names = os.listdir(f'{BASE_PATH}')
     print(class_names)
@@ -36,13 +30,13 @@ def load_and_split_data(target_size = (224,224)):
             img_path = os.path.join(BASE_PATH,name,spectogram)
             
             img = load_img(img_path,target_size=INPUT_SHAPE)
-            img_array = img_to_array(img)
+            img_array = img_to_array(img, dtype = np.float16)
 
             spectogram_array.append(img_array)
             spectogram_labels.append(class_number)
 
-    spectogram_array = np.array(spectogram_array)
-    spectogram_labels = np.array(spectogram_labels)
+    spectogram_array = np.array(spectogram_array, dtype = np.float16)
+    spectogram_labels = np.array(spectogram_labels, dtype = np.float16)
 
     # Podział danych na testowe oraz treningowe
     X_train, X_test, y_train, y_test = train_test_split(spectogram_array,spectogram_labels,test_size=0.3,random_state=42)
@@ -136,7 +130,7 @@ def test_model(model,X_test,y_test):
 
     print(f"Accuracy model: {np.round(test_acc * 100,2)} %")
 
-    return y_pred
+    return y_pred, test_acc
 
 
 def show_confusion_matrix(y_true, y_pred, class_names):
@@ -156,6 +150,7 @@ if __name__ == "__main__":
 
     # Wczytanie danych
     X_train, X_test, y_train, y_test, num_of_classes, class_names = load_and_split_data(target_size = INPUT_SHAPE)
+    print("SPECTOGRAMS IMAGES LOADED...")
 
     # Tworzenie modelu
     cnn_model = create_model(target_shape = INPUT_SHAPE, output_size = num_of_classes)
@@ -177,7 +172,7 @@ if __name__ == "__main__":
     show_results(train_history)
 
     # Ewaluacja modelu
-    y_pred = test_model(cnn_model,X_test,y_test)
+    y_pred, result_acc = test_model(cnn_model,X_test,y_test)
 
     # Wyświetlenie confision_matrix
     show_confusion_matrix(y_test,y_pred,class_names)
@@ -186,5 +181,7 @@ if __name__ == "__main__":
 
 
     # Zapis modelu
-
-
+    now = date.today()
+    current_time = now.strftime("%d_%m_%Y-%H_%M")
+    cnn_model.save(f"./models/model_{current_time}__{TRAIN_EPOCHS}__{result_acc:.04f}.keras")
+    print("Model saved...")
