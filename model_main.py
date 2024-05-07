@@ -68,11 +68,13 @@ def create_model(target_shape=INPUT_SHAPE,output_size=2):
     model.add(layers.MaxPooling2D(pool_size=(2,2)))
     model.add(layers.Conv2D(32, (3, 3), padding='same',activation='relu'))
     model.add(layers.MaxPooling2D(pool_size=(2,2)))
-    model.add(layers.Conv2D(64, (3, 3), padding='same',activation='relu'))
+    model.add(layers.Conv2D(32, (3, 3), padding='same',activation='relu'))
     model.add(layers.MaxPooling2D(pool_size=(2,2)))
     model.add(layers.Flatten())
     model.add(layers.Dense(512, activation='relu'))
+    model.add(layers.Dropout(0.5))
     model.add(layers.Dense(256, activation='relu'))
+    model.add(layers.Dropout(0.3))
     model.add(layers.Dense(units = output_size, activation='softmax')) # Warstwa wyjściowa
 
     model.compile(
