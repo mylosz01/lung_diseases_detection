@@ -30,10 +30,29 @@ namespace LungMed.Controllers
         }
 
         // GET: Patients
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string PersonalNumberPatientSearch, string LastNameDoctorSearch, int DoctorIdSearch)
         {
-            var applicationDbContext = _context.Patient.Include(p => p.Doctor);
-            return View(await applicationDbContext.ToListAsync());
+            var patients = from p in _context.Patient.Include(p => p.Doctor)
+                           select p;
+
+            if (!String.IsNullOrEmpty(PersonalNumberPatientSearch))
+            {
+                patients = patients.Where(s => s.PersonalNumber.Contains(PersonalNumberPatientSearch));
+            }
+            if (!String.IsNullOrEmpty(LastNameDoctorSearch))
+            {
+                patients = patients.Where(s => s.Doctor.LastName.Contains(LastNameDoctorSearch));
+            }
+            if (DoctorIdSearch != 0)
+            {
+                patients = patients.Where(s => s.DoctorId == DoctorIdSearch);
+            }
+
+            var patientDoctorModel = new PatientViewModel
+            {
+                Patients = await patients.ToListAsync()
+            };
+            return View(patientDoctorModel);
         }
 
         // GET: Patients/Details/5

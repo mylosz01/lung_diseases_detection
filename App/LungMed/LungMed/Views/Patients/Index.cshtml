@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LungMed.Models.Patient>
+﻿@model LungMed.ViewModels.PatientViewModel
 
 @{
     ViewData["Title"] = "Patients";
@@ -9,35 +9,48 @@
 <p>
     <a asp-action="Create">Add a new patient</a>
 </p>
+<form asp-controller="Patients" asp-action="Index" method="get">
+    <p>
+        Personal number: <input type="text" asp-for="PersonalNumberPatientSearch" />
+        Doctor's last name: <input type="text" asp-for="LastNameDoctorSearch" />
+        Doctor's Id <input type="text" asp-for="DoctorIdSearch" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                @Html.DisplayNameFor(model => model.Patients![0].FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                @Html.DisplayNameFor(model => model.Patients![0].LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PersonalNumber)
+                @Html.DisplayNameFor(model => model.Patients![0].PersonalNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
+                @Html.DisplayNameFor(model => model.Patients![0].PhoneNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BirhtDate)
+                @Html.DisplayNameFor(model => model.Patients![0].BirhtDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Sex)
+                @Html.DisplayNameFor(model => model.Patients![0].Sex)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Doctor)
+                @Html.DisplayNameFor(model => model.Patients![0].DoctorId)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patients![0].Doctor!.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patients![0].Doctor!.LastName)
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Patients!) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
@@ -58,8 +71,13 @@
                 @Html.DisplayFor(modelItem => item.Sex)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Doctor.Id)
+                @Html.DisplayFor(modelItem => item.DoctorId)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doctor!.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doctor!.LastName)
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

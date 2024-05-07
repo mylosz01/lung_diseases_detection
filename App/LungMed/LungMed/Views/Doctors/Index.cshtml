@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LungMed.Models.Doctor>
+﻿@model LungMed.ViewModels.DoctorViewModel
 
 @{
     ViewData["Title"] = "Doctors";
@@ -9,26 +9,33 @@
 <p>
     <a asp-action="Create">Add a new doctor</a>
 </p>
+<form asp-controller="Doctors" asp-action="Index" method="get">
+    <p>
+        First name: <input type="text" asp-for="FirstNameSearch" />
+        Last name: <input type="text" asp-for="LastNameSearch" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                @Html.DisplayNameFor(model => model.Doctors![0].Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                @Html.DisplayNameFor(model => model.Doctors![0].FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                @Html.DisplayNameFor(model => model.Doctors![0].LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
+                @Html.DisplayNameFor(model => model.Doctors![0].PhoneNumber)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Doctors!) {
         <tr>
             <td>
                     @Html.DisplayFor(modelItem => item.Id)

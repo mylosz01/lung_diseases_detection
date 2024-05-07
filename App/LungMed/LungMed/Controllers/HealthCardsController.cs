@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using LungMed.Data;
 using LungMed.Models;
 using Microsoft.AspNetCore.Authorization;
+using LungMed.ViewModels;
 
 namespace LungMed.Controllers
 {
@@ -22,10 +23,25 @@ namespace LungMed.Controllers
         }
 
         // GET: HealthCards
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string LastNameSearch, string PersonalNumberSearch)
         {
+            var healthCards = from h in _context.HealthCard.Include(h => h.Patient)
+                              select h;
+
+            if (!String.IsNullOrEmpty(LastNameSearch))
+            {
+                healthCards = healthCards.Where(s => s.Patient.LastName.Contains(LastNameSearch));
+            }
+            if (!String.IsNullOrEmpty(PersonalNumberSearch))
+            {
+                healthCards = healthCards.Where(s => s.Patient.PersonalNumber.Contains(PersonalNumberSearch));
+            }
+            var healthCardViewModel = new HealthCardViewModel
+            {
+                HealthCards = await healthCards.ToListAsync()
+            };
             var applicationDbContext = _context.HealthCard.Include(h => h.Patient);
-            return View(await applicationDbContext.ToListAsync());
+            return View(healthCardViewModel);
         }
 
         // GET: HealthCards/Details/5
