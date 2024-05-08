@@ -1,0 +1,9 @@
+librosa
+numpy
+pandas
+matplotlib
+pillow
+ipython
+tensorflow
+seaborn
+scikit-learn
