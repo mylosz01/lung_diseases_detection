@@ -119,6 +119,10 @@ def show_results(hist=None):
     plt.ylabel("Recall")
     plt.legend()
 
+    #Create directory for save results
+    if not os.path.exists('./results'):
+        os.makedirs('./results')
+
     # Save plot
     now = datetime.now()
     current_time = now.strftime("%d_%m_%Y-%H_%M")
@@ -170,8 +174,8 @@ if __name__ == "__main__":
     #cnn_model.summary()
 
     # Trenowanie modelu
-    TRAIN_EPOCHS = 2
-    BATCH_SIZE = 3
+    TRAIN_EPOCHS = 20
+    BATCH_SIZE = 2
 
     train_history = cnn_model.fit(x = X_train,
                                   y = y_train,
@@ -190,6 +194,10 @@ if __name__ == "__main__":
 
     # Przykładowa predykcja
 
+
+    # Tworzenie folderu do zapisu modelu
+    if not os.path.exists('./models'):
+        os.makedirs('./models')
 
     # Zapis modelu
     now = datetime.now()
