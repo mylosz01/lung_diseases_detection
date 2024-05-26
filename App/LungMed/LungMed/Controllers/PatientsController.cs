@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace LungMed.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Administrator")]
     public class PatientsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -32,14 +32,27 @@ namespace LungMed.Controllers
         // GET: Patients
         public async Task<IActionResult> Index(string PersonalNumberPatientSearch, string LastNameDoctorSearch, int DoctorIdSearch)
         {
-            var patients = from p in _context.Patient.Include(p => p.Doctor)
-                           select p;
 
-            if (!String.IsNullOrEmpty(PersonalNumberPatientSearch))
+            var user = await _userManager.GetUserAsync(User);
+ 
+            IQueryable<Patient> patients;
+
+            if (User.IsInRole("Administrator"))
+            {
+                patients = _context.Patient.Include(p => p.Doctor);
+            }
+            else
+            {
+                patients = _context.Patient
+                    .Include(p => p.Doctor)
+                    .Where(p => p.DoctorId == user.DoctorId);
+            }
+
+            if (!string.IsNullOrEmpty(PersonalNumberPatientSearch))
             {
                 patients = patients.Where(s => s.PersonalNumber.Contains(PersonalNumberPatientSearch));
             }
-            if (!String.IsNullOrEmpty(LastNameDoctorSearch))
+            if (!string.IsNullOrEmpty(LastNameDoctorSearch))
             {
                 patients = patients.Where(s => s.Doctor.LastName.Contains(LastNameDoctorSearch));
             }
@@ -52,6 +65,7 @@ namespace LungMed.Controllers
             {
                 Patients = await patients.ToListAsync()
             };
+
             return View(patientDoctorModel);
         }
 

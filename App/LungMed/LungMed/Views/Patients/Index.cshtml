@@ -7,13 +7,20 @@
 <h1>Patients</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>Add a new patient</a>
+    @if (User.IsInRole("Administrator"))
+    {
+        <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>Add a new patient</a>
+    }
+    
 </p>
 <form asp-controller="Patients" asp-action="Index" method="get">
     <p>
         Personal number: <input type="text" asp-for="PersonalNumberPatientSearch" />
-        Doctor's last name: <input type="text" asp-for="LastNameDoctorSearch" />
-        Doctor's Id <input type="text" asp-for="DoctorIdSearch" />
+        @if (User.IsInRole("Administrator"))
+        {
+            <span>Doctor's last name: <input type="text" asp-for="LastNameDoctorSearch" /></span>
+            <span>Doctor's Id: <input type="text" asp-for="DoctorIdSearch" /></span>
+        }
         <input type="submit" value="Filter" />
     </p>
 </form>
@@ -53,7 +60,13 @@
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Patients![0].Doctor!.LastName)
-                    <th></th>
+                    </th>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    }
                 </tr>
             </thead>
             <tbody>
@@ -86,11 +99,19 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Doctor!.LastName)
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> 
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Details</a> 
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                         </td>
+                        @if (User.IsInRole("Administrator"))
+                        {
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> 
+                            </td>
+                            <td>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Details</a> 
+                            </td>
+                            <td>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                            </td>
+                        }
                     </tr>
                 }
             </tbody>

@@ -20,8 +20,8 @@
                 <tr>
                     <th>Role No</th>
                     <th>Role Name</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -34,10 +34,10 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Name)
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa fa-edit"></i>Edit</a>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa fa-edit"></i>Delete</a>
                         </td>
                     </tr>

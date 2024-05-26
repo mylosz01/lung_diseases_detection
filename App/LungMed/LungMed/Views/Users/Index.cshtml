@@ -27,7 +27,7 @@
                     <th>Patient ID</th>
                     <th>Role Name</th>
                     <th>Email</th>
-                    <th>Delete</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -40,8 +40,8 @@
                         <td>@Html.DisplayFor(modeliteam => item.PatientId)</td>
                         <td>@Html.DisplayFor(modeliteam => item.Role.Name)</td>
                         <td>@Html.DisplayFor(modeliteam => item.Email)</td>
-                        
-                        <td>
+
+                        <td class="text-center">
                             <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
