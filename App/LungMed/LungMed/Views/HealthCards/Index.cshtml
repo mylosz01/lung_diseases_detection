@@ -7,7 +7,7 @@
 <h1>Health Cards</h1>
 
 <p>
-    <a asp-action="Create">Add a new health card</a>
+    <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>Add a new health card</a>
 </p>
 <form asp-controller="HealthCards" asp-action="Index" method="get">
     <p>
@@ -16,51 +16,61 @@
         <input type="submit" value="Filter" />
     </p>
 </form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.HealthCards![0].PatientId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HealthCards![0].Patient.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HealthCards![0].Patient.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HealthCards![0].Patient.PersonalNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HealthCards![0].Date)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.HealthCards) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PatientId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Patient.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Patient.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Patient.PersonalNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">List</h3>
+    </div>
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HealthCards![0].PatientId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HealthCards![0].Patient.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HealthCards![0].Patient.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HealthCards![0].Patient.PersonalNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HealthCards![0].Date)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.HealthCards!)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PatientId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Patient.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Patient.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Patient.PersonalNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

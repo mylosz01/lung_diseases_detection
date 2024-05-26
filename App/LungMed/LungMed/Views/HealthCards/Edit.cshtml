@@ -4,6 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
+
 <h1>Edit</h1>
 
 <h4>HealthCard</h4>
@@ -54,16 +55,21 @@
                 <span asp-validation-for="PatientId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <div class="col-md-12">
+                    <div class="card-footer">
+                        <div class="clearfix">
+                            <a asp-action="Index" class="btn btn-primary push-left">Back to List</a>
+                            <button type="submit" class="btn btn-danger">Save</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

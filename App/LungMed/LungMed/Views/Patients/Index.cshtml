@@ -7,7 +7,7 @@
 <h1>Patients</h1>
 
 <p>
-    <a asp-action="Create">Add a new patient</a>
+    <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>Add a new patient</a>
 </p>
 <form asp-controller="Patients" asp-action="Index" method="get">
     <p>
@@ -17,73 +17,83 @@
         <input type="submit" value="Filter" />
     </p>
 </form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Patients![0].FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patients![0].LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patients![0].PersonalNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patients![0].PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patients![0].BirhtDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patients![0].Sex)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patients![0].DoctorId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patients![0].Doctor!.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patients![0].Doctor!.LastName)
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Patients!) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PersonalNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BirhtDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sex)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DoctorId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Doctor!.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Doctor!.LastName)
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">List</h3>
+    </div>
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Patients![0].FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Patients![0].LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Patients![0].PersonalNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Patients![0].PhoneNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Patients![0].BirhtDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Patients![0].Sex)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Patients![0].DoctorId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Patients![0].Doctor!.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Patients![0].Doctor!.LastName)
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Patients!)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PersonalNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BirhtDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sex)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DoctorId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Doctor!.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Doctor!.LastName)
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> 
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Details</a> 
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
