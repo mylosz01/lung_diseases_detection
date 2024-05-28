@@ -1,17 +1,32 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@model IEnumerable<ApplicationUser>
+@model LungMed.ViewModels.UserSearchViewModel
 @{
     ViewData["Tittle"] = "System Users";
 }
 <h1>Users</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>Create user for admin</a>
+    <a asp-action="CreateAdmin" class="btn btn-primary"><i class="fa fa-plus"></i>Create user for admin</a>
     <a asp-action="CreateDoctor" class="btn btn-primary"><i class="fa fa-plus"></i>Create user for doctor</a>
     <a asp-action="CreatePatient" class="btn btn-primary"><i class="fa fa-plus"></i>Create user for patient</a>
 </p>
 
-
+<form asp-controller="Users" asp-action="Index" method="get">
+    <div class="row align-items-center">
+        <div class="col-md-2">
+            <select asp-for="RoleSearchString" asp-items="Model.Roles" class="form-control">
+                <option value="">All</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input type="text" id="LastNameSearchString" name="LastNameSearchString" class="form-control" placeholder="Enter last name..." />
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
+    </div>
+</form>
+<br />
 
 <div class="card">
     <div class="card-header">
@@ -31,7 +46,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var item in Model.Users!)
                 {
                     <tr>
                         <td>@Html.DisplayFor(modeliteam => item.FirstName)</td>

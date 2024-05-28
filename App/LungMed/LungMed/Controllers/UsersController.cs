@@ -35,26 +35,41 @@ namespace LungMed.Controllers
 
         }
 
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string RoleSearchString, string LastNameSearchString)
         {
+            IQueryable<string> roleQuery = from r in _context.Roles
+                                           orderby r.Name
+                                           select r.Name;
+            var users = from u in _context.Users.Include(u => u.Role)
+                        select u;
 
-            var users = await _context.Users.Include(x => x.Role).ToListAsync();
+            if (!string.IsNullOrEmpty(RoleSearchString))
+            {
+                users = users.Where(u => u.RoleId == _context.Roles.FirstOrDefault(r => r.Name == RoleSearchString).Id);
+            }
+            if (!string.IsNullOrEmpty(LastNameSearchString))
+            {
+                users = users.Where(u => u.LastName.Contains(LastNameSearchString));
+            }
+            users = users.OrderBy(u => u.LastName).ThenBy(u => u.FirstName);
 
-            return View(users);
+            var userSearchViewModel = new UserSearchViewModel
+            {
+                Roles = new SelectList(await roleQuery.Distinct().ToListAsync()),
+                Users = await users.ToListAsync()
+            };
+
+            return View(userSearchViewModel);
         }
         //CREATE USER 
         [HttpGet]
-        public async Task<ActionResult> Create()
+        public async Task<ActionResult> CreateAdmin()
         {
-
-            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name");
-
-
             return View();
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create(UserViewModel model)
+        public async Task<ActionResult> CreateAdmin(UserViewModel model)
         {
             ApplicationUser user = new ApplicationUser();
 
@@ -69,15 +84,24 @@ namespace LungMed.Controllers
             user.EmailConfirmed = true;
             user.PhoneNumberConfirmed = true;
             user.CreatedOn = DateTime.Now;
-            user.CreatedById = "Admin";
-            user.RoleId = model.RoleId;
+            user.CreatedById = _userManager.GetUserId(User);
+
+            var adminRole = await _roleManager.FindByNameAsync("Administrator");
+            if (adminRole != null)
+            {
+                user.RoleId = adminRole.Id;
+            }
+            else
+            {
+                return NotFound();
+            }
 
 
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, _context.Roles.FirstOrDefault(r => r.Id == model.RoleId).Name);
+                await _userManager.AddToRoleAsync(user, _context.Roles.FirstOrDefault(r => r.Id == user.RoleId).Name);
 
                 return RedirectToAction("Index");
             }
@@ -95,9 +119,6 @@ namespace LungMed.Controllers
 
                 return View(model);
             }
-
-            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name", model.RoleId);
-
         }
 
         //CREATE USER DOCTOR
@@ -115,8 +136,6 @@ namespace LungMed.Controllers
             }).ToListAsync();
 
             ViewData["Doctor"] = new SelectList(doctors, "Id", "FullNameWithId");
-            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name");
-
 
             return View();
         }
@@ -142,15 +161,22 @@ namespace LungMed.Controllers
             user.EmailConfirmed = true;
             user.PhoneNumberConfirmed = true;
             user.CreatedOn = DateTime.Now;
-            user.CreatedById = "Admin";
-            user.RoleId = model.RoleId;
+            user.CreatedById = _userManager.GetUserId(User);
 
-
+            var doctorRole = await _roleManager.FindByNameAsync("Lekarz");
+            if (doctorRole != null)
+            {
+                user.RoleId = doctorRole.Id;
+            }
+            else
+            {
+                return NotFound();
+            }
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, _context.Roles.FirstOrDefault(r => r.Id == model.RoleId).Name);
+                await _userManager.AddToRoleAsync(user, _context.Roles.FirstOrDefault(r => r.Id == user.RoleId).Name);
 
                 return RedirectToAction("Index");
             }
@@ -178,7 +204,6 @@ namespace LungMed.Controllers
             }).ToListAsync();
 
             ViewData["Doctor"] = new SelectList(doctors, "Id", "FullNameWithId");
-            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name", model.RoleId);
 
         }
 
@@ -197,8 +222,6 @@ namespace LungMed.Controllers
             }).ToListAsync();
 
             ViewData["Patient"] = new SelectList(patients, "Id", "FullNameWithIdAndPersonal");
-            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name");
-
 
             return View();
         }
@@ -224,15 +247,24 @@ namespace LungMed.Controllers
             user.EmailConfirmed = true;
             user.PhoneNumberConfirmed = true;
             user.CreatedOn = DateTime.Now;
-            user.CreatedById = "Admin";
-            user.RoleId = model.RoleId;
+            user.CreatedById = _userManager.GetUserId(User);
+            
+            var patientRole = await _roleManager.FindByNameAsync("Pacjent");
+            if (patientRole != null)
+            {
+                user.RoleId = patientRole.Id;
+            }
+            else
+            {
+                return NotFound();
+            }
 
 
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, _context.Roles.FirstOrDefault(r => r.Id == model.RoleId).Name);
+                await _userManager.AddToRoleAsync(user, _context.Roles.FirstOrDefault(r => r.Id == user.RoleId).Name);
 
                 return RedirectToAction("Index");
             }
@@ -261,24 +293,32 @@ namespace LungMed.Controllers
             }).ToListAsync();
 
             ViewData["Patient"] = new SelectList(patients, "Id", "FullNameWithIdAndPersonal");
-            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name", model.RoleId);
-
         }
 
         [HttpGet]
         public async Task<ActionResult> Delete(string id)
         {
-            var user = new UserViewModel();
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser.Id == id)
+            {
+                return RedirectToAction("Index");
+            }
+
             var result = await _userManager.FindByIdAsync(id);
-
-            user.Id = result.Id;
-            user.Email = result.Email;
-            user.FirstName = result.FirstName;
-            user.LastName = result.LastName;
-            user.Password = result.PasswordHash;
-            user.UserName = result.UserName;
-            user.RoleId = result.RoleId;
-
+            if (result == null)
+            {
+                return NotFound();
+            }
+            var user = new UserViewModel()
+            {
+                Id = result.Id,
+                Email = result.Email,
+                FirstName = result.FirstName,
+                LastName = result.LastName,
+                Password = result.PasswordHash,
+                UserName = result.UserName,
+                RoleId = result.RoleId
+            };
             ViewBag.RoleName = _context.Roles.FirstOrDefault(r => r.Id == result.RoleId)?.Name;
 
             return View(user);
@@ -288,11 +328,19 @@ namespace LungMed.Controllers
         [HttpPost]
         public async Task<ActionResult> Delete(string id, UserViewModel model)
         {
+            var userToDelete = await _userManager.FindByIdAsync(id);
+            if (userToDelete == null)
+            {
+                return NotFound();
+            }
 
-            var user = await _userManager.FindByIdAsync(id);
-            user.FirstName = model.FirstName;
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser.Id == id)
+            {
+                return RedirectToAction("Index");
+            }
 
-            var result = await _userManager.DeleteAsync(user);
+            var result = await _userManager.DeleteAsync(userToDelete);
             if (result.Succeeded)
             {
                 return RedirectToAction("Index");

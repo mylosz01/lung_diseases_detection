@@ -10,12 +10,19 @@
     <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>Add a new doctor</a>
 </p>
 <form asp-controller="Doctors" asp-action="Index" method="get">
-    <p>
-        First name: <input type="text" asp-for="FirstNameSearch" />
-        Last name: <input type="text" asp-for="LastNameSearch" />
-        <input type="submit" value="Filter" />
-    </p>
+    <div class="row align-items-center">
+        <div class="col-md-2">
+            <input type="text" asp-for="FirstNameSearch" class="form-control" placeholder="Enter first name..." />
+        </div>
+        <div class="col-md-2">
+            <input type="text" asp-for="LastNameSearch" class="form-control" placeholder="Enter last name..." />
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
+    </div>
 </form>
+<br />
 
 <div class="card">
     <div class="card-header">
