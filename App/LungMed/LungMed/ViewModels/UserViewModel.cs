@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace LungMed.ViewModels
 {
@@ -19,7 +20,8 @@ namespace LungMed.ViewModels
         public string LastName { get; set; }
 
         [DisplayName("Password")]
-
+        [Required(ErrorMessage = "Password is required")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [DisplayName("User Name")]

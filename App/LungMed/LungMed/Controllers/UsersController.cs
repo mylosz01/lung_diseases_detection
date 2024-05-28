@@ -71,6 +71,10 @@ namespace LungMed.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateAdmin(UserViewModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
             ApplicationUser user = new ApplicationUser();
 
 
@@ -119,33 +123,28 @@ namespace LungMed.Controllers
 
                 return View(model);
             }
+            
         }
 
         //CREATE USER DOCTOR
 
         [HttpGet]
-        public async Task<ActionResult> CreateDoctor()
+        public async Task<IActionResult> CreateDoctor()
         {
-
-            var doctors = await _context.Doctor.Select(d => new Doctor
-            {
-                Id = d.Id,
-                FirstName = d.FirstName,
-                LastName = d.LastName,
-                PhoneNumber = d.PhoneNumber
-            }).ToListAsync();
-
-            ViewData["Doctor"] = new SelectList(doctors, "Id", "FullNameWithId");
-
+            await LoadDoctors();
             return View();
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreateDoctor(UserViewModel model)
+        public async Task<IActionResult> CreateDoctor(UserViewModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                await LoadDoctors(); // Ponowne załadowanie listy lekarzy
+                return View(model);
+            }
+
             ApplicationUser user = new ApplicationUser();
-
-
             int doctorId = int.Parse(model.Doctor);
             var selectedDoctor = await _context.Doctor.FindAsync(doctorId);
 
@@ -153,8 +152,6 @@ namespace LungMed.Controllers
             user.LastName = selectedDoctor.LastName;
             user.PhoneNumber = selectedDoctor.PhoneNumber;
             user.DoctorId = doctorId;
-
-
             user.UserName = model.Email;
             user.NormalizedUserName = model.Email;
             user.Email = model.Email;
@@ -172,19 +169,18 @@ namespace LungMed.Controllers
             {
                 return NotFound();
             }
+
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
                 await _userManager.AddToRoleAsync(user, _context.Roles.FirstOrDefault(r => r.Id == user.RoleId).Name);
-
                 return RedirectToAction("Index");
             }
             else
             {
                 foreach (var error in result.Errors)
                 {
-                
                     if (error.Code == "DuplicateUserName")
                     {
                         ModelState.AddModelError(string.Empty, "Konto o podanym adresie email już istnieje.");
@@ -192,46 +188,39 @@ namespace LungMed.Controllers
                     }
                 }
 
+                await LoadDoctors(); // Ponowne załadowanie listy lekarzy
                 return View(model);
             }
+        }
 
-            var doctors = await _context.Doctor.Select(d => new Doctor
+        private async Task LoadDoctors()
+        {
+            var doctors = await _context.Doctor.Select(d => new
             {
                 Id = d.Id,
-                FirstName = d.FirstName,
-                LastName = d.LastName,
-                PhoneNumber = d.PhoneNumber
+                FullNameWithId = d.FirstName + " " + d.LastName + " (" + d.Id + ")"
             }).ToListAsync();
 
             ViewData["Doctor"] = new SelectList(doctors, "Id", "FullNameWithId");
-
         }
 
-        //CREATE USER PATIENT
         [HttpGet]
         public async Task<ActionResult> CreatePatient()
         {
-
-            var patients = await _context.Patient.Select(d => new Patient
-            {
-                Id = d.Id,
-                FirstName = d.FirstName,
-                LastName = d.LastName,
-                PhoneNumber = d.PhoneNumber,
-                PersonalNumber = d.PersonalNumber
-            }).ToListAsync();
-
-            ViewData["Patient"] = new SelectList(patients, "Id", "FullNameWithIdAndPersonal");
-
+            await LoadPatients();
             return View();
         }
 
         [HttpPost]
         public async Task<ActionResult> CreatePatient(UserViewModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                await LoadPatients(); // Ponowne załadowanie listy pacjentów
+                return View(model);
+            }
+
             ApplicationUser user = new ApplicationUser();
-
-
             int patientId = int.Parse(model.Patient);
             var selectedPatient = await _context.Patient.FindAsync(patientId);
 
@@ -239,8 +228,6 @@ namespace LungMed.Controllers
             user.LastName = selectedPatient.LastName;
             user.PhoneNumber = selectedPatient.PhoneNumber;
             user.PatientId = patientId;
-
-
             user.UserName = model.Email;
             user.NormalizedUserName = model.Email;
             user.Email = model.Email;
@@ -248,7 +235,7 @@ namespace LungMed.Controllers
             user.PhoneNumberConfirmed = true;
             user.CreatedOn = DateTime.Now;
             user.CreatedById = _userManager.GetUserId(User);
-            
+
             var patientRole = await _roleManager.FindByNameAsync("Pacjent");
             if (patientRole != null)
             {
@@ -259,20 +246,17 @@ namespace LungMed.Controllers
                 return NotFound();
             }
 
-
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
                 await _userManager.AddToRoleAsync(user, _context.Roles.FirstOrDefault(r => r.Id == user.RoleId).Name);
-
                 return RedirectToAction("Index");
             }
             else
             {
                 foreach (var error in result.Errors)
                 {
-
                     if (error.Code == "DuplicateUserName")
                     {
                         ModelState.AddModelError(string.Empty, "Konto o podanym adresie email już istnieje.");
@@ -280,20 +264,22 @@ namespace LungMed.Controllers
                     }
                 }
 
+                await LoadPatients(); // Ponowne załadowanie listy pacjentów
                 return View(model);
             }
+        }
 
-            var patients = await _context.Patient.Select(d => new Patient
+        private async Task LoadPatients()
+        {
+            var patients = await _context.Patient.Select(d => new
             {
                 Id = d.Id,
-                FirstName = d.FirstName,
-                LastName = d.LastName,
-                PhoneNumber = d.PhoneNumber,
-                PersonalNumber = d.PersonalNumber
+                FullNameWithIdAndPersonal = d.FirstName + " " + d.LastName + " (" + d.PersonalNumber + ")"
             }).ToListAsync();
 
             ViewData["Patient"] = new SelectList(patients, "Id", "FullNameWithIdAndPersonal");
         }
+
 
         [HttpGet]
         public async Task<ActionResult> Delete(string id)
