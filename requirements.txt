@@ -4,6 +4,10 @@ pandas
 matplotlib
 pillow
 ipython
+ipykernel
 tensorflow
 seaborn
 scikit-learn
+noisereduce
+openpyxl
+pydub
