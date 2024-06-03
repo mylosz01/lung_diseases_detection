@@ -30,6 +30,8 @@ namespace LungMed.Models
         public Doctor? Doctor { get; set; }
 
         public string FullNameWithIdAndPersonal => $"Id: {Id} - {FirstName} {LastName} {PersonalNumber}";
+
+        
     }
     public enum Sex
     {

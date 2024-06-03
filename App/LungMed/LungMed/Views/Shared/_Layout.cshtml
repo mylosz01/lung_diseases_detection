@@ -39,11 +39,18 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="HealthCards" asp-action="Index">Health Cards</a>
                             </li>
+                            
                         }
                         else if(User.IsInRole("Lekarz"))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Patients" asp-action="Index">Patients</a>
+                            </li>
+                        }
+                        else if (User.IsInRole("Pacjent"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Upload" asp-action="Index">Upload File</a>
                             </li>
                         }
                     </ul>

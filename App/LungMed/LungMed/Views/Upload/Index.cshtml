@@ -1,0 +1,42 @@
+﻿@model LungMed.ViewModels.RecordingViewModel
+
+@{
+    ViewData["Title"] = "Recordings";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="UploadFile" class="btn btn-primary"><i class="fa fa-plus"></i>Upload New Recording</a>
+</p>
+
+@if (Model.Recordings != null && Model.Recordings.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>File Name</th>
+                <th>Added Date</th>
+                <th>Patient</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var recording in Model.Recordings)
+            {
+                <tr>
+                    <td>@recording.FileName</td>
+                    <td>@recording.DateAdded.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                    <td>@(recording.Patient != null ? recording.Patient.FirstName + " " + recording.Patient.LastName : "Unknown")</td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@recording.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No recordings available.</p>
+}

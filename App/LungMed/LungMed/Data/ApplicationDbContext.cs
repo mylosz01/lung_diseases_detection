@@ -13,6 +13,7 @@ namespace LungMed.Data
         public DbSet<LungMed.Models.Doctor> Doctor { get; set; } = default!;
         public DbSet<LungMed.Models.Patient> Patient { get; set; } = default!;
         public DbSet<LungMed.Models.HealthCard> HealthCard { get; set; } = default!;
+        public DbSet<LungMed.Models.Recording> Recording { get; set; } = default!;
 
     }
 }
