@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using ModelPredict;
 
 namespace LungMed.Controllers
 {
@@ -80,8 +81,33 @@ namespace LungMed.Controllers
             {
                 if (file != null && file.Length > 0)
                 {
+                    //SEKCJA ZMIENIANA
+                    //Stworzenie folderu dla pliku dźwiękowego
+                    string relation = @"..\..\..";
+                    string toSavePath = Path.Combine(Environment.CurrentDirectory, relation, $"Prediction Model\\Python Scripts\\Audio");
+                    Directory.CreateDirectory(toSavePath);
+
+
                     // Ustalona nowa nazwa pliku bazująca na imieniu użytkownika
                     string newFileName = patient.FirstName + patient.LastName + patient.PersonalNumber + Path.GetExtension(file.FileName);
+                    string FilePath = Path.Combine(toSavePath, newFileName);
+
+                    //Zapisanie zawartości pliku lokalnie w celu analizy przez model
+                    using (var stream = new FileStream(FilePath, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+
+                    ModelManager manager = new ModelManager(FilePath);
+                    //W tym miejscu zwracany jest wynik modelu dla danego nagrania
+                    string modelResult = manager.GetModelResultsFromPythonScripts();
+
+                    //Kasowanie pliku po przetworzeniu przez model
+                    if(System.IO.File.Exists(FilePath)) 
+                    {
+                        System.IO.File.Delete(FilePath);
+                    }
+                    //SEKCJA ZMIENIANA
 
                     // Odczytanie zawartości pliku do tablicy bajtów
                     using (var memoryStream = new MemoryStream())

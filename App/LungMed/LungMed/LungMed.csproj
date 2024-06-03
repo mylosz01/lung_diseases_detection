@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Prediction Model\" />
     <Folder Include="wwwroot\UploadedFiles\" />
   </ItemGroup>
 

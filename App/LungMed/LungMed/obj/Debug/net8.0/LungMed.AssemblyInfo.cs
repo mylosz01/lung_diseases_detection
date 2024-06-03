@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LungMed")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05fedd44d2000c072e6f7c98973b58bb5aa45887")]
 [assembly: System.Reflection.AssemblyProductAttribute("LungMed")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LungMed")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,73 @@
+#imports
+import sys
+import os
+import shutil
+import librosa
+import glob
+import numpy as np
+
+from augmentation import preprocess_augmentation
+
+SAMPLE_RATE = 24000
+CHUNK_LENGTH = 3 # w sekundach
+
+
+def load_audio_path():
+    audioPath = sys.argv[1]
+    if any([audioPath == None, not isinstance(audioPath,str)]):
+        raise Exception('Couldn'' t load audiopath')
+    return audioPath
+
+def get_mel_spectograms(filepath,sample_rate=22000,image_shape=(224,224), use_augmentation = False):
+    #Wczytanie pliku audio
+    wave, rate = librosa.load(path = filepath, sr = sample_rate)
+
+    #Podział dźwięku na odcinki
+    signal_splits = []
+
+    for i in range(0,len(wave),int(CHUNK_LENGTH * SAMPLE_RATE)):
+        chunk = wave[i:i + int(CHUNK_LENGTH * SAMPLE_RATE)]
+
+        if len(chunk) < int(CHUNK_LENGTH * SAMPLE_RATE):
+            break
+        
+        signal_splits.append(np.array(chunk))
+
+    #Uzywanie augmentation
+    if use_augmentation == True:
+        augmented_chunks = preprocess_augmentation(signal_splits)
+        signal_splits.extend(augmented_chunks)
+
+    #Tworzenie mel spektogramu dla kazdego z odcinka
+    ready_mel_spectograms = []
+
+    for chunk in signal_splits:
+
+        mel_spectogram = librosa.feature.melspectrogram(y = chunk,
+                                                        sr = rate,
+                                                        n_fft = 1024,
+                                                        hop_length = 512,
+                                                        n_mels = image_shape[0] * 1,
+                                                        fmin = 100,
+                                                        fmax = 24000)
+        
+        mel_spectogram = librosa.amplitude_to_db(mel_spectogram, ref = np.max)
+
+        #Normalizacja
+        mel_spectogram -= mel_spectogram.min()
+        mel_spectogram /= mel_spectogram.max()
+
+        #Dodanie melspektogramu do listy
+        ready_mel_spectograms.append(np.array(mel_spectogram))
+
+    return ready_mel_spectograms
+    
+    
+    
+    
+    
+    
+    
+    
+    
+

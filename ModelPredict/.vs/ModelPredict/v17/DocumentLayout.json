@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\ModelPredict\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AB086587-EDC7-4B1A-A80C-CEC3945D4B90}|ModelPredict\\ModelPredict.csproj|C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\ModelPredict\\modelpredict\\modelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB086587-EDC7-4B1A-A80C-CEC3945D4B90}|ModelPredict\\ModelPredict.csproj|solutionrelative:modelpredict\\modelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB086587-EDC7-4B1A-A80C-CEC3945D4B90}|ModelPredict\\ModelPredict.csproj|c:\\users\\ravelien\\desktop\\studia - 6 semestr\\projekt kompetencyjny\\model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\modelpredict\\modelpredict\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB086587-EDC7-4B1A-A80C-CEC3945D4B90}|ModelPredict\\ModelPredict.csproj|solutionrelative:modelpredict\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB086587-EDC7-4B1A-A80C-CEC3945D4B90}|ModelPredict\\ModelPredict.csproj|C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\ModelPredict\\modelpredict\\spis pakiet\u00F3w.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{AB086587-EDC7-4B1A-A80C-CEC3945D4B90}|ModelPredict\\ModelPredict.csproj|solutionrelative:modelpredict\\spis pakiet\u00F3w.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Main.cs",
+              "DocumentMoniker": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\ModelPredict\\ModelPredict\\Main.cs",
+              "RelativeDocumentMoniker": "ModelPredict\\Main.cs",
+              "ToolTip": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\ModelPredict\\ModelPredict\\Main.cs",
+              "RelativeToolTip": "ModelPredict\\Main.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T18:23:18.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ModelManager.cs",
+              "DocumentMoniker": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\ModelPredict\\ModelPredict\\ModelManager.cs",
+              "RelativeDocumentMoniker": "ModelPredict\\ModelManager.cs",
+              "ToolTip": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\ModelPredict\\ModelPredict\\ModelManager.cs",
+              "RelativeToolTip": "ModelPredict\\ModelManager.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAADYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T18:36:30.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Spis pakiet\u00F3w.txt",
+              "DocumentMoniker": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\ModelPredict\\ModelPredict\\Spis pakiet\u00F3w.txt",
+              "RelativeDocumentMoniker": "ModelPredict\\Spis pakiet\u00F3w.txt",
+              "ToolTip": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\ModelPredict\\ModelPredict\\Spis pakiet\u00F3w.txt",
+              "RelativeToolTip": "ModelPredict\\Spis pakiet\u00F3w.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-05-27T18:37:35.168Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
