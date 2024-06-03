@@ -22,15 +22,13 @@ class LungModel:
     spectogram_labels = []
     number_of_classes = 0
     class_names = []
-    full_dataset = np.numpy()
-    train_dataset = np.numpy()
-    test_dataset = np.numpy()
+    train_dataset = None
+    test_dataset = None
     train_history = None
+    _y_test = None
 
     #Wczytanie sciezek plików oraz ich labelów
     def load_data_paths_and_labels(self):
-        spectogram_paths = []
-        spectogram_labels = []
 
         self.class_names = os.listdir(f'{BASE_PATH}')
         print(f"CLASS NAMES: {self.class_names}")
@@ -45,62 +43,57 @@ class LungModel:
 
         self.number_of_classes = len(self.class_names)
 
-    # Funkcja to wczytania obrazów oraz znormalizowania ich
-    def preprocess_image(self,file_path, label, target_size):
-        img = load_img(file_path, target_size=target_size)
-        img_array = img_to_array(img, dtype=np.float32) / 255.0  # Normalizacja
-        return img_array, label
 
-    #Wczytanie danych
-    def prepare_dataset(self):
+    # Wczytywanie obrazów
+    def load_and_preprocess_image(self, file_path, label_):
+        img = tf.io.read_file(file_path)
+        img = tf.image.decode_image(img, channels=3, expand_animations=False)
+        img = tf.image.resize(img, [224, 224])
+        img = img / 255.0
 
-        spectogram_array = []
-        spectogram_labels = []
+        label = tf.keras.utils.to_categorical(label_, num_classes=self.number_of_classes)
 
-        class_names = os.listdir(f'{BASE_PATH}')
-        print(class_names)
+        return img, label
 
-        for class_number, name in enumerate(class_names):
-            spect_files = os.listdir(f"{BASE_PATH}/{name}")
+    #Przygotowanie danych
+    def prepare_dataset(self,_batch_size = 1):
 
-            for spectogram in spect_files:
-                img_path = os.path.join(BASE_PATH,name,spectogram)
-                
-                img = load_img(img_path,target_size=INPUT_SHAPE)
-                img_array = img_to_array(img, dtype = np.float16)
+        # Podział zbioru na dane treningowe oraz testowe
+        X_train, X_test, y_train, y_test = train_test_split(self.spectogram_paths, self.spectogram_labels, test_size=0.3, random_state=42)
+        self._y_test = y_test
 
-                spectogram_array.append(img_array)
-                spectogram_labels.append(class_number)
+        self.train_dataset = tf.data.Dataset.from_tensor_slices((X_train, y_train))
+        self.test_dataset = tf.data.Dataset.from_tensor_slices((X_test, y_test))
 
-        spectogram_array = np.array(spectogram_array, dtype = np.float16)
-        spectogram_labels = np.array(spectogram_labels, dtype = np.float16)
+        #Mapowanie po obrazach
+        self.train_dataset = self.train_dataset.map(self.load_and_preprocess_image, num_parallel_calls=tf.data.experimental.AUTOTUNE)
+        self.test_dataset = self.test_dataset.map(self.load_and_preprocess_image, num_parallel_calls=tf.data.experimental.AUTOTUNE)
 
-        # Podział danych na testowe oraz treningowe
-        X_train, X_test, y_train, y_test = train_test_split(spectogram_array,spectogram_labels,test_size=0.3,random_state=42)
+        #Batchowanie oraz prefetch danych
+        self.train_dataset = self.train_dataset.batch(_batch_size).prefetch(buffer_size=tf.data.AUTOTUNE)
+        self.test_dataset = self.test_dataset.batch(_batch_size).prefetch(buffer_size=tf.data.AUTOTUNE)
 
         # Sprawdzenie rozmiarów zbiorów danych
-        print("Rozmiar zbioru treningowego:", X_train.shape)
-        print("Rozmiar zbioru testowego:", X_test.shape)
-        print("Ilość rozpatrywanych klas : ", len(class_names))
+        print("Rozmiar zbioru treningowego:",  tf.data.experimental.cardinality(self.train_dataset).numpy())
+        print("Rozmiar zbioru testowego:", tf.data.experimental.cardinality(self.test_dataset).numpy())
+        print("Ilość rozpatrywanych klas : ", len(self.class_names))
 
-        # Zmiana numerów labels na wektory
-        y_train = tf.keras.utils.to_categorical(y_train, num_classes = len(class_names))
-        y_test = tf.keras.utils.to_categorical(y_test, num_classes = len(class_names))
-
-        return X_train, X_test, y_train, y_test, len(class_names), class_names
 
     # Trenowanie modelu
-    def train_model(self,train_epochs = 1, batch_size = 1):
-        self.train_history = model.fit(x=X_train,
-                  y=y_train,
-                  batch_size=BATCH_SIZE,
-                  epochs=TRAIN_EPOCHS,
-                  validation_data=(X_test, y_test))
+    def train_model(self, _train_epochs = 1):
+        #print("Kształt zbioru treningowego:", self.train_dataset.element_spec)
+        #print("Kształt zbioru testowego:", self.test_dataset.element_spec)
+        print("Trenowanie modelu...")
+
+        self.train_history = self.model.fit(
+            self.train_dataset,
+            epochs = _train_epochs,
+            validation_data = self.test_dataset)
 
     #Tworzenie modelu
     def create_model(self):
         model = tf.keras.models.Sequential()
-        model.add( Input(shape = (INPUT_SHAPE[0],INPUT_SHAPE[1],3))) # Warstwa wejściowa
+        model.add( Input(shape = ( INPUT_SHAPE[0], INPUT_SHAPE[1], 3))) # Warstwa wejściowa
         model.add(layers.Conv2D(8, (3, 3), padding='same',activation='relu'))
         model.add(layers.MaxPooling2D(pool_size=(2,2)))
         model.add(layers.Conv2D(16, (3, 3), padding='same',activation='relu'))
@@ -178,18 +171,19 @@ class LungModel:
 
 
     def test_model(self):
+        print("Testowanie modelu...")
 
-        y_pred = np.argmax(model.predict(X_test), axis= 1)
+        y_pred_ = self.model.predict(self.test_dataset)
 
-        test_acc = sum(y_pred == np.argmax(y_test, axis= 1)) / len(y_test)
+        test_acc = sum(self._y_test == np.argmax(y_pred_, axis= 1)) / len(self._y_test)
 
         print(f"Accuracy model: {np.round(test_acc * 100,2)} %")
 
-        return y_pred, test_acc
+        return y_pred_, test_acc
 
 
-    def show_confusion_matrix(self,y_true, y_pred, class_names):
-        confusion_mtx = tf.math.confusion_matrix(np.argmax(y_true, axis = 1), y_pred)
+    def show_confusion_matrix(self, y_pred_, class_names):
+        confusion_mtx = tf.math.confusion_matrix(self._y_test, np.argmax(y_pred_, axis=1))
 
         plt.figure(figsize=(10, 6))
         sns.heatmap(confusion_mtx,
@@ -228,13 +222,12 @@ if __name__ == "__main__":
     # lung_disease_model.model.summary()
 
     #Przygotowanie danych
-    lung_disease_model.prepare_dataset()
+    BATCH_SIZE = 16
+    lung_disease_model.prepare_dataset(BATCH_SIZE)
 
     # Trenowanie modelu
-    TRAIN_EPOCHS = 5
-    BATCH_SIZE = 2
-
-    lung_disease_model.train_model()
+    TRAIN_EPOCHS = 10
+    lung_disease_model.train_model(TRAIN_EPOCHS)
 
     # Wyświetlanie wyników treningu
     lung_disease_model.show_results()
@@ -243,10 +236,7 @@ if __name__ == "__main__":
     y_pred, result_acc = lung_disease_model.test_model()
 
     # Wyświetlenie confision_matrix
-    lung_disease_model.show_confusion_matrix(y_test,y_pred,class_names)
-
-    # Przykładowa predykcja
-
+    lung_disease_model.show_confusion_matrix(y_pred,lung_disease_model.class_names)
 
     # Tworzenie folderu do zapisu modelu
     if not os.path.exists('./models'):
