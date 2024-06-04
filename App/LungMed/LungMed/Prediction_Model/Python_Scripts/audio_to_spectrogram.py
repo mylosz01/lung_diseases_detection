@@ -5,20 +5,13 @@ import shutil
 import librosa
 import glob
 import numpy as np
+import matplotlib.pyplot as plt
 
-from augmentation import preprocess_augmentation
+def get_mel_spectograms(filepath,sample_rate=22000,image_shape=(224,224)):
+    
+    SAMPLE_RATE = 24000
+    CHUNK_LENGTH = 3  # w sekundach
 
-SAMPLE_RATE = 24000
-CHUNK_LENGTH = 3 # w sekundach
-
-
-def load_audio_path():
-    audioPath = sys.argv[1]
-    if any([audioPath == None, not isinstance(audioPath,str)]):
-        raise Exception('Couldn'' t load audiopath')
-    return audioPath
-
-def get_mel_spectograms(filepath,sample_rate=22000,image_shape=(224,224), use_augmentation = False):
     #Wczytanie pliku audio
     wave, rate = librosa.load(path = filepath, sr = sample_rate)
 
@@ -32,11 +25,6 @@ def get_mel_spectograms(filepath,sample_rate=22000,image_shape=(224,224), use_au
             break
         
         signal_splits.append(np.array(chunk))
-
-    #Uzywanie augmentation
-    if use_augmentation == True:
-        augmented_chunks = preprocess_augmentation(signal_splits)
-        signal_splits.extend(augmented_chunks)
 
     #Tworzenie mel spektogramu dla kazdego z odcinka
     ready_mel_spectograms = []
@@ -57,17 +45,10 @@ def get_mel_spectograms(filepath,sample_rate=22000,image_shape=(224,224), use_au
         mel_spectogram -= mel_spectogram.min()
         mel_spectogram /= mel_spectogram.max()
 
+        #mel_spectogram = np.resize(mel_spectogram,(image_shape[0],image_shape[1]))
+        mel_spectogram = np.resize(mel_spectogram,(image_shape[0],image_shape[1],3))
+
         #Dodanie melspektogramu do listy
         ready_mel_spectograms.append(np.array(mel_spectogram))
 
     return ready_mel_spectograms
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
