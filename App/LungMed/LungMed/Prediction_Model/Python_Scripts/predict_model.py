@@ -11,11 +11,13 @@ from tensorflow.keras import layers
 from tensorflow.keras import Input
 from tensorflow.keras.models import load_model
 
+import audio_to_spectrogram as _audio_
+
 DISEASE_LIST = ['Asthma','Bronchiectasis','Bronchiolitis','COPD','Covid-19','Healthy','Heart_Failure','LRTI','Pneumonia','Symptomatic','URTI']
 
 #PATH_TO_MODEL = os.path.join("Model","model_08_05_2024-13_...keras")
 PATH_TO_MODEL = os.path.join("./models","model_04_06_2024-10_21__2__0.7491.keras")
-PATH_TO_FILE = os.path.join("./data","spectograms","Healthy","0a8e4279-3840-4872-9db8-3b5d8c53cc4_0.png")
+PATH_TO_FILE = os.path.join("./data","audio","COPD","107_2b3_Ar_mc_AKGC417L.wav")
 
 class Predict_Diseases:
 
@@ -30,24 +32,13 @@ class Predict_Diseases:
     def load_model_from_file(self):
         self.model = load_model(PATH_TO_MODEL, compile=True)
 
-    def load_audio_file(self):
-        pass
-
     def prepare_data(self,spect_path):
-
-        def load_and_preprocess_image(file_path):
-            img = tf.io.read_file(file_path)
-            img = tf.image.decode_image(img, channels=3, expand_animations=False)
-            img = tf.image.resize(img, [224, 224])
-            img = img / 255.0
-            img = tf.expand_dims(img, axis=0)
-
-            return img
-
-        self.dataset = load_and_preprocess_image(PATH_TO_FILE)
+        array = _audio_.get_mel_spectograms(filepath = spect_path, sample_rate = 24000)
+        #print(len(array))
+        self.dataset = tf.convert_to_tensor(array, dtype=tf.float32)
 
     def predict_result(self):
-        self.prediction = self.model.predict(self.dataset)
+        self.prediction = self.model.predict(self.dataset, verbose=0)
 
 
 if __name__ == "__main__":
@@ -61,5 +52,7 @@ if __name__ == "__main__":
     # Predykcja
     predict_disease.predict_result()
 
-    val = np.argmax(predict_disease.prediction, axis=1)[0]
-    print(f"Prediction : {DISEASE_LIST[val]}")
+    val = set(np.argmax(predict_disease.prediction, axis=1))
+    #print(val)
+    for i in val:
+        print(f"{DISEASE_LIST[i]}")
