@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Text.Json;
+using System.Runtime.CompilerServices;
 
 namespace ModelPredict
 {
@@ -13,12 +14,15 @@ namespace ModelPredict
         public string pathToAudioFile;
         //do ustawienia we własnym zakresie zależnie od maszyny
         private const string interpreterPath = @"C:\\Users\\Ravelien\\.conda\\envs\\model_application_integration\\python.exe";
+        private const string relation = @"..\..\..";
         private string scriptPath;
 
-        public ModelManager(string pathToFile)
+        public ModelManager(string filename)
         {
-            this.pathToAudioFile = pathToFile;
-            string relation = @"..\..\..";
+            string toSavePath = CreateFolderForAudioModification();
+            //Tworzenie ścieżki do pliku
+            this.pathToAudioFile = Path.Combine(toSavePath, filename);
+            //Tworzenie ścieżki dla skryptu uruchamiającego
             string scriptPath = Path.Combine(Environment.CurrentDirectory, relation, $"Prediction Model\\Python Scripts\\main.py");
         }
 
@@ -57,5 +61,13 @@ namespace ModelPredict
                 return "Program Execution failed";
             }
         }
+
+        public string CreateFolderForAudioModification()
+        {
+            string toSavePath = Path.Combine(Environment.CurrentDirectory, $"Prediction Model\\Python Scripts\\Audio");
+            Directory.CreateDirectory(toSavePath);
+            return toSavePath;
+        }
+
     }
 }

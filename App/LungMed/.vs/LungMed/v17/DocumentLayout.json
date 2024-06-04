@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\App\\LungMed\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\ravelien\\desktop\\studia - 6 semestr\\projekt kompetencyjny\\model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\app\\lungmed\\lungmed\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\ravelien\\desktop\\studia - 6 semestr\\projekt kompetencyjny\\model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\app\\lungmed\\lungmed\\prediction model\\modelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\prediction model\\modelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +18,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 672,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UploadController.cs",
+              "DocumentMoniker": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\App\\LungMed\\LungMed\\Controllers\\UploadController.cs",
+              "RelativeDocumentMoniker": "LungMed\\Controllers\\UploadController.cs",
+              "ToolTip": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\App\\LungMed\\LungMed\\Controllers\\UploadController.cs",
+              "RelativeToolTip": "LungMed\\Controllers\\UploadController.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAAAEcAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T07:42:24.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ModelManager.cs",
+              "DocumentMoniker": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\App\\LungMed\\LungMed\\Prediction Model\\ModelManager.cs",
+              "RelativeDocumentMoniker": "LungMed\\Prediction Model\\ModelManager.cs",
+              "ToolTip": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\App\\LungMed\\LungMed\\Prediction Model\\ModelManager.cs",
+              "RelativeToolTip": "LungMed\\Prediction Model\\ModelManager.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAAAEIAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T07:42:11.824Z",
+              "EditorCaption": ""
             }
           ]
         }

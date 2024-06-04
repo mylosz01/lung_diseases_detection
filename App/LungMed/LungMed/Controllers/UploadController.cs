@@ -82,30 +82,25 @@ namespace LungMed.Controllers
                 if (file != null && file.Length > 0)
                 {
                     //SEKCJA ZMIENIANA
-                    //Stworzenie folderu dla pliku dźwiękowego
-                    string relation = @"..\..\..";
-                    string toSavePath = Path.Combine(Environment.CurrentDirectory, relation, $"Prediction Model\\Python Scripts\\Audio");
-                    Directory.CreateDirectory(toSavePath);
-
-
                     // Ustalona nowa nazwa pliku bazująca na imieniu użytkownika
                     string newFileName = patient.FirstName + patient.LastName + patient.PersonalNumber + Path.GetExtension(file.FileName);
-                    string FilePath = Path.Combine(toSavePath, newFileName);
+                    
+                    //Tworzenie folderu do przetwarzania nagrań i ścieżki do pliku
+                    ModelManager manager = new ModelManager(newFileName);
 
                     //Zapisanie zawartości pliku lokalnie w celu analizy przez model
-                    using (var stream = new FileStream(FilePath, FileMode.Create))
+                    using (var stream = new FileStream(manager.pathToAudioFile, FileMode.Create))
                     {
                         await file.CopyToAsync(stream);
                     }
 
-                    ModelManager manager = new ModelManager(FilePath);
                     //W tym miejscu zwracany jest wynik modelu dla danego nagrania
                     string modelResult = manager.GetModelResultsFromPythonScripts();
 
                     //Kasowanie pliku po przetworzeniu przez model
-                    if(System.IO.File.Exists(FilePath)) 
+                    if(System.IO.File.Exists(manager.pathToAudioFile)) 
                     {
-                        System.IO.File.Delete(FilePath);
+                        System.IO.File.Delete(manager.pathToAudioFile);
                     }
                     //SEKCJA ZMIENIANA
 
