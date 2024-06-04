@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\App\\LungMed\\",
+  "WorkspaceRootPath": "D:\\Python\\Lung_app\\App\\LungMed\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\ravelien\\desktop\\studia - 6 semestr\\projekt kompetencyjny\\model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\app\\lungmed\\lungmed\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|d:\\python\\lung_app\\app\\lungmed\\lungmed\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\ravelien\\desktop\\studia - 6 semestr\\projekt kompetencyjny\\model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\app\\lungmed\\lungmed\\prediction model\\modelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\prediction model\\modelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|d:\\python\\lung_app\\app\\lungmed\\lungmed\\prediction_model\\modelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\prediction_model\\modelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|d:\\python\\lung_app\\app\\lungmed\\lungmed\\prediction_model\\python_scripts\\main.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\prediction_model\\python_scripts\\main.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 672,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UploadController.cs",
-              "DocumentMoniker": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\App\\LungMed\\LungMed\\Controllers\\UploadController.cs",
-              "RelativeDocumentMoniker": "LungMed\\Controllers\\UploadController.cs",
-              "ToolTip": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\App\\LungMed\\LungMed\\Controllers\\UploadController.cs",
-              "RelativeToolTip": "LungMed\\Controllers\\UploadController.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAAAEcAAAAGAAAA",
+              "DocumentIndex": 1,
+              "Title": "ModelManager.cs",
+              "DocumentMoniker": "D:\\Python\\Lung_app\\App\\LungMed\\LungMed\\Prediction_Model\\ModelManager.cs",
+              "RelativeDocumentMoniker": "LungMed\\Prediction_Model\\ModelManager.cs",
+              "ToolTip": "D:\\Python\\Lung_app\\App\\LungMed\\LungMed\\Prediction_Model\\ModelManager.cs",
+              "RelativeToolTip": "LungMed\\Prediction_Model\\ModelManager.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAgwD8AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T07:42:24.201Z",
+              "WhenOpened": "2024-06-04T07:42:11.824Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ModelManager.cs",
-              "DocumentMoniker": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\App\\LungMed\\LungMed\\Prediction Model\\ModelManager.cs",
-              "RelativeDocumentMoniker": "LungMed\\Prediction Model\\ModelManager.cs",
-              "ToolTip": "C:\\Users\\Ravelien\\Desktop\\STUDIA - 6 semestr\\PROJEKT KOMPETENCYJNY\\Model klasyfikacji chor\u00F3b oddechowych\\lung_diseases_detection\\App\\LungMed\\LungMed\\Prediction Model\\ModelManager.cs",
-              "RelativeToolTip": "LungMed\\Prediction Model\\ModelManager.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAAAEIAAABJAAAA",
+              "DocumentIndex": 2,
+              "Title": "main.py",
+              "DocumentMoniker": "D:\\Python\\Lung_app\\App\\LungMed\\LungMed\\Prediction_Model\\Python_Scripts\\main.py",
+              "RelativeDocumentMoniker": "LungMed\\Prediction_Model\\Python_Scripts\\main.py",
+              "ToolTip": "D:\\Python\\Lung_app\\App\\LungMed\\LungMed\\Prediction_Model\\Python_Scripts\\main.py",
+              "RelativeToolTip": "LungMed\\Prediction_Model\\Python_Scripts\\main.py",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-06-04T08:54:39.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UploadController.cs",
+              "DocumentMoniker": "D:\\Python\\Lung_app\\App\\LungMed\\LungMed\\Controllers\\UploadController.cs",
+              "RelativeDocumentMoniker": "LungMed\\Controllers\\UploadController.cs",
+              "ToolTip": "D:\\Python\\Lung_app\\App\\LungMed\\LungMed\\Controllers\\UploadController.cs",
+              "RelativeToolTip": "LungMed\\Controllers\\UploadController.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAgwFUAAACKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T07:42:11.824Z",
+              "WhenOpened": "2024-06-04T07:42:24.201Z",
               "EditorCaption": ""
             }
           ]

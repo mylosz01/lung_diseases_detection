@@ -13,9 +13,9 @@ namespace ModelPredict
     {
         public string pathToAudioFile;
         //do ustawienia we własnym zakresie zależnie od maszyny
-        private const string interpreterPath = @"C:\\Users\\Ravelien\\.conda\\envs\\model_application_integration\\python.exe";
-        private const string relation = @"..\..\..";
+        private const string interpreterPath = @"D:\\Python\\lung_diseases_detection\\.venv\\Scripts\\python.exe";
         private string scriptPath;
+        private string filePathPythonArgument;
 
         public ModelManager(string filename)
         {
@@ -23,7 +23,8 @@ namespace ModelPredict
             //Tworzenie ścieżki do pliku
             this.pathToAudioFile = Path.Combine(toSavePath, filename);
             //Tworzenie ścieżki dla skryptu uruchamiającego
-            string scriptPath = Path.Combine(Environment.CurrentDirectory, relation, $"Prediction Model\\Python Scripts\\main.py");
+            scriptPath = Path.Combine(Environment.CurrentDirectory, $"Prediction_Model\\Python_Scripts\\main.py");
+            filePathPythonArgument = Path.Combine($"Audio\\", filename);
         }
 
         public string GetModelResultsFromPythonScripts() 
@@ -34,7 +35,7 @@ namespace ModelPredict
             ProcessStartInfo psi = new ProcessStartInfo
             {
                 FileName = interpreterPath,
-                Arguments = arguments,
+                Arguments = scriptPath,
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
                 CreateNoWindow = true

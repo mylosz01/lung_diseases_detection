@@ -84,7 +84,7 @@ namespace LungMed.Controllers
                     //SEKCJA ZMIENIANA
                     // Ustalona nowa nazwa pliku bazująca na imieniu użytkownika
                     string newFileName = patient.FirstName + patient.LastName + patient.PersonalNumber + Path.GetExtension(file.FileName);
-                    
+
                     //Tworzenie folderu do przetwarzania nagrań i ścieżki do pliku
                     ModelManager manager = new ModelManager(newFileName);
 
@@ -123,7 +123,8 @@ namespace LungMed.Controllers
                         await _context.SaveChangesAsync();
                     }
 
-                    ViewBag.Message = "File Uploaded Successfully!";
+                    ViewBag.Message = "File Uploaded Successfully!\n" +
+                        $" 123 {modelResult}";
                 }
                 else
                 {
