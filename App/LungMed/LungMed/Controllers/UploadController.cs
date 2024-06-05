@@ -124,7 +124,7 @@ namespace LungMed.Controllers
                     }
 
                     ViewBag.Message = "File Uploaded Successfully!\n" +
-                        $" 123 {modelResult}";
+                        $" Results: {modelResult}";
                 }
                 else
                 {

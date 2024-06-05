@@ -1,4 +1,5 @@
 import os
+import sys
 from datetime import datetime
 import librosa
 import numpy as np
@@ -15,9 +16,7 @@ import audio_to_spectrogram as _audio_
 
 DISEASE_LIST = ['Asthma','Bronchiectasis','Bronchiolitis','COPD','Covid-19','Healthy','Heart_Failure','LRTI','Pneumonia','Symptomatic','URTI']
 
-#PATH_TO_MODEL = os.path.join("Model","model_08_05_2024-13_...keras")
-PATH_TO_MODEL = os.path.join("./models","model_04_06_2024-10_21__2__0.7491.keras")
-PATH_TO_FILE = os.path.join("./data","audio","COPD","107_2b3_Ar_mc_AKGC417L.wav")
+PATH_TO_MODEL = os.path.join("./Prediction_Model","Python_Scripts","Model","best_model.keras")
 
 class Predict_Diseases:
 
@@ -26,7 +25,7 @@ class Predict_Diseases:
     spectograms = []
     dataset = None
 
-    def __init__(self,):
+    def __init__(self):
         self.load_model_from_file()
 
     def load_model_from_file(self):
@@ -45,14 +44,16 @@ if __name__ == "__main__":
 
     # Stworzenie obiektu predykcji
     predict_disease = Predict_Diseases()
-
+    PATH_TO_FILE = sys.argv[1]
+    
     #Wczytanie audio
     predict_disease.prepare_data(spect_path=PATH_TO_FILE)
 
     # Predykcja
     predict_disease.predict_result()
 
+    #Wyświetlanie wykrytych chorób
     val = set(np.argmax(predict_disease.prediction, axis=1))
     #print(val)
     for i in val:
-        print(f"{DISEASE_LIST[i]}")
+       print(f"{DISEASE_LIST[i]}")

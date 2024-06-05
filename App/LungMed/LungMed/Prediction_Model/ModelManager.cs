@@ -23,7 +23,7 @@ namespace ModelPredict
             //Tworzenie ścieżki do pliku
             this.pathToAudioFile = Path.Combine(toSavePath, filename);
             //Tworzenie ścieżki dla skryptu uruchamiającego
-            scriptPath = Path.Combine(Environment.CurrentDirectory, $"Prediction_Model\\Python_Scripts\\main.py");
+            scriptPath = Path.Combine(Environment.CurrentDirectory, @"Prediction_Model\\Python_Scripts\\predict_model.py");
             filePathPythonArgument = Path.Combine($"Audio\\", filename);
         }
 
@@ -35,10 +35,9 @@ namespace ModelPredict
             ProcessStartInfo psi = new ProcessStartInfo
             {
                 FileName = interpreterPath,
-                Arguments = scriptPath,
+                Arguments = arguments,
                 RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
+                UseShellExecute = false
             };
 
             try
@@ -65,7 +64,7 @@ namespace ModelPredict
 
         public string CreateFolderForAudioModification()
         {
-            string toSavePath = Path.Combine(Environment.CurrentDirectory, $"Prediction Model\\Python Scripts\\Audio");
+            string toSavePath = Path.Combine(Environment.CurrentDirectory, $"Prediction_Model\\Python_Scripts\\Audio");
             Directory.CreateDirectory(toSavePath);
             return toSavePath;
         }
