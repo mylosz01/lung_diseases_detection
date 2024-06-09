@@ -80,6 +80,9 @@ namespace LungMed.Controllers
             var patient = await _context.Patient
                 .Include(p => p.Doctor)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
+            
+
             if (patient == null)
             {
                 return NotFound();
@@ -102,15 +105,33 @@ namespace LungMed.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,PersonalNumber,PhoneNumber,BirhtDate,Sex,DoctorId")] Patient patient)
         {
+            var existingPatient = await _context.Patient
+                .FirstOrDefaultAsync(p => p.PersonalNumber == patient.PersonalNumber);
+
+            if (existingPatient != null)
+            {
+                ModelState.AddModelError("PersonalNumber", "Personal number must be unique.");
+            }
+
+            var existingPhoneNumber = await _context.Patient
+                .FirstOrDefaultAsync(p => p.PhoneNumber == patient.PhoneNumber);
+
+            if (existingPhoneNumber != null)
+            {
+                ModelState.AddModelError("PhoneNumber", "Phone number must be unique.");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(patient);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["DoctorId"] = new SelectList(_context.Doctor, "Id", "FullNameWithId", patient.DoctorId);
             return View(patient);
         }
+
 
         // GET: Patients/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -119,6 +140,7 @@ namespace LungMed.Controllers
             {
                 return NotFound();
             }
+
 
             var patient = await _context.Patient.FindAsync(id);
             if (patient == null)
@@ -141,17 +163,35 @@ namespace LungMed.Controllers
                 return NotFound();
             }
 
+            var existingPatient = await _context.Patient
+                .FirstOrDefaultAsync(p => p.PersonalNumber == patient.PersonalNumber && p.Id != patient.Id);
+
+            if (existingPatient != null)
+            {
+                ModelState.AddModelError("PersonalNumber", "Personal number must be unique.");
+            }
+
+            var existingPhoneNumber = await _context.Patient
+                .FirstOrDefaultAsync(p => p.PhoneNumber == patient.PhoneNumber && p.Id != patient.Id);
+
+            if (existingPhoneNumber != null)
+            {
+                ModelState.AddModelError("PhoneNumber", "Phone number must be unique.");
+            }
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                    //!!!!!!!!!!
                     _context.Update(patient);
 
                     var user = await _context.Users.FirstOrDefaultAsync(u => u.PatientId == patient.Id);
-                    user.FirstName = patient.FirstName;
-                    user.LastName = patient.LastName;
-                    _context.Update(user);
+                    if (user != null)
+                    {
+                        user.FirstName = patient.FirstName;
+                        user.LastName = patient.LastName;
+                        _context.Update(user);
+                    }
 
                     await _context.SaveChangesAsync();
                 }
@@ -168,9 +208,11 @@ namespace LungMed.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["DoctorId"] = new SelectList(_context.Doctor, "Id", "FullNameWithId", patient.DoctorId);
             return View(patient);
         }
+
 
         // GET: Patients/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -188,6 +230,9 @@ namespace LungMed.Controllers
                 return NotFound();
             }
 
+            var doctor = await _context.Doctor.FindAsync(patient.DoctorId);
+            ViewBag.DoctorDetails = $"Id: {doctor.Id} - {doctor.FirstName} {doctor.LastName}";
+
             return View(patient);
         }
 
@@ -203,6 +248,10 @@ namespace LungMed.Controllers
             }
 
             await _context.SaveChangesAsync();
+
+            var doctor = await _context.Doctor.FindAsync(patient.DoctorId);
+            ViewBag.DoctorDetails = $"Id: {doctor.Id} - {doctor.FirstName} {doctor.LastName}";
+
             return RedirectToAction(nameof(Index));
         }
 

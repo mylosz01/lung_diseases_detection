@@ -4,117 +4,251 @@
     ViewData["Title"] = "Patients";
 }
 
-<h1>Patients</h1>
 
-<p>
+<div class="container">
+    <h1>Patients</h1>
+
     @if (User.IsInRole("Administrator"))
     {
-        <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>Add a new patient</a>
+        <p class="text-center">
+            <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>Add a new patient</a>
+        </p>
     }
-    
-</p>
-<form asp-controller="Patients" asp-action="Index" method="get">
-    <p>
-        Personal number: <input type="text" asp-for="PersonalNumberPatientSearch" />
-        @if (User.IsInRole("Administrator"))
-        {
-            <span>Doctor's last name: <input type="text" asp-for="LastNameDoctorSearch" /></span>
-            <span>Doctor's Id: <input type="text" asp-for="DoctorIdSearch" /></span>
-        }
-        <input type="submit" value="Filter" />
-    </p>
-</form>
+   
 
+    <form asp-controller="Patients" asp-action="Index" method="get">
+        <div class="row align-items-center">
+            <div class="col-md-2">
+                <input type="text" asp-for="PersonalNumberPatientSearch" class="form-control" placeholder="Enter personal number..." />
+            </div>
+            @if (User.IsInRole("Administrator"))
+            {
+                <div class="col-md-2">
+                    <input type="text" asp-for="LastNameDoctorSearch" class="form-control" placeholder="Enter doctor's last name..." />
+                </div>
+                <div class="col-md-2">
+                    <input type="text" asp-for="DoctorIdSearch" class="form-control" placeholder="Enter doctor's id..." />
+                </div>
+            }
+            
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-warning">Filter</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='@Url.Action("Index", "Patients")'">Reset</button>
+            </div>
+        </div>
+    </form>
 
-<div class="card">
-    <div class="card-header">
-        <h3 class="card-title">List</h3>
-    </div>
-    <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Patients![0].FirstName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Patients![0].LastName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Patients![0].PersonalNumber)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Patients![0].PhoneNumber)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Patients![0].BirhtDate)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Patients![0].Sex)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Patients![0].DoctorId)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Patients![0].Doctor!.FirstName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Patients![0].Doctor!.LastName)
-                    </th>
-                    @if (User.IsInRole("Administrator"))
-                    {
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    }
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Patients!)
-                {
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Patients List</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.FirstName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.LastName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PersonalNumber)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PhoneNumber)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.BirhtDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Sex)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.DoctorId)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Doctor!.FirstName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Doctor!.LastName)
-                        </td>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Patients![0].Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Patients![0].FirstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Patients![0].LastName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Patients![0].PersonalNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Patients![0].PhoneNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Patients![0].BirhtDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Patients![0].Sex)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Patients![0].DoctorId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Patients![0].Doctor!.FirstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Patients![0].Doctor!.LastName)
+                        </th>
                         @if (User.IsInRole("Administrator"))
                         {
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> 
-                            </td>
-                            <td>
-                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Details</a> 
-                            </td>
-                            <td>
-                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                            </td>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                         }
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @if (Model.Patients == null || !Model.Patients.Any())
+                    {
+                        <tr>
+                            <td colspan="13" class="text-center">No patients found.</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var item in Model.Patients!)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PersonalNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BirhtDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Sex)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DoctorId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Doctor!.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Doctor!.LastName)
+                                </td>
+                                @if (User.IsInRole("Administrator"))
+                                {
+                                    <td class="text-center">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Details</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+
+
+
+
+
+<style>
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        text-align: center;
+        color: #343a40;
+        margin-top: 20px;
+    }
+
+    .container {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .btn-primary {
+        background-color: #d6536d;
+        border-color: #d6536d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #c4455c;
+            transform: translateY(-2px);
+        }
+
+    .btn-warning {
+        background-color: #efb11d;
+        border-color: #efb11d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-warning:hover {
+            background-color: #d19b17;
+            transform: translateY(-2px);
+        }
+
+    .btn-danger {
+        background-color: #e74c3c;
+        border-color: #e74c3c;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+    .card {
+        margin-top: 20px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #ff7f50;
+        color: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-title {
+        margin: 0;
+        padding: 10px;
+        font-size: 1.2em;
+    }
+
+    .card-body {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 20px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f1f1f1;
+            color: #343a40;
+        }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+</style>

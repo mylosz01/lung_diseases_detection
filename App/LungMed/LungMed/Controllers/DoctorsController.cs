@@ -116,9 +116,13 @@ namespace LungMed.Controllers
                 {
                     _context.Update(doctor);
                     var user = await _context.Users.FirstOrDefaultAsync(u => u.DoctorId == doctor.Id);
-                    user.FirstName = doctor.FirstName;
-                    user.LastName = doctor.LastName;
-                    _context.Update(user);
+                    if(user != null)
+                    {
+                        user.FirstName = doctor.FirstName;
+                        user.LastName = doctor.LastName;
+                        _context.Update(user);
+                    }
+                    
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

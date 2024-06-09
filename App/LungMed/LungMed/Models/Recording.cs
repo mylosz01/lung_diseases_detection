@@ -17,6 +17,7 @@ namespace LungMed.Models
         public Patient? Patient { get; set; }
 
         [Required]
+        [Display(Name = "Upload Date")]
         public DateTime DateAdded { get; set; } = DateTime.Now;
     }
 }

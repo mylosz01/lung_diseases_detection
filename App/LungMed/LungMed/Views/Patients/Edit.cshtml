@@ -4,65 +4,166 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
 
-<h4>Patient</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PersonalNumber" class="control-label"></label>
-                <input asp-for="PersonalNumber" class="form-control" />
-                <span asp-validation-for="PersonalNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BirhtDate" class="control-label"></label>
-                <input asp-for="BirhtDate" class="form-control" />
-                <span asp-validation-for="BirhtDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Sex" class="control-label"></label>
-                @Html.DropDownListFor(model => model.Sex, new SelectList(Enum.GetValues(typeof(LungMed.Models.Sex))), "Select...", new { @class = "form-control" })
-                <span asp-validation-for="Sex" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DoctorId" class="control-label"></label>
-                <select asp-for="DoctorId" class="form-control" asp-items="ViewBag.DoctorId"></select>
-                <span asp-validation-for="DoctorId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <div class="card-footer">
-                        <div class="clearfix">
-                            <a asp-action="Index" class="btn btn-primary push-left">Back to List</a>
-                            <button type="submit" class="btn btn-danger">Save Patient</button>
-                        </div>
+<h2 class="text-center my-4">Edit Patient</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="shadow p-4 rounded bg-light custom-form">      
+                <form asp-action="Edit">
+                    <input type="hidden" asp-for="Id" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="doctor-info mb-4 p-1 rounded text-center">
+                        <h4>Doctor</h4>
+                        <select asp-for="DoctorId" class="form-control" asp-items="ViewBag.DoctorId"></select>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <h4>Patient</h4>
+                        <hr />
+                        <label asp-for="FirstName" class="control-label"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger validation-message"></span>
+
+                        <label asp-for="LastName" class="control-label"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger validation-message"></span>
+
+                        <label asp-for="PersonalNumber" class="control-label"></label>
+                        <input asp-for="PersonalNumber" class="form-control" />
+                        <span asp-validation-for="PersonalNumber" class="text-danger validation-message"></span>
+
+                        <label asp-for="PhoneNumber" class="control-label"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger validation-message"></span>
+
+                        @* <label asp-for="BirhtDate" class="control-label"></label>
+                        <input asp-for="BirhtDate" class="form-control" />
+                        <span asp-validation-for="BirhtDate" class="text-danger validation-message"></span> *@
+
+                        <label asp-for="BirhtDate" class="control-label"></label>
+                        <input asp-for="BirhtDate" class="form-control" max="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                        <span asp-validation-for="BirhtDate" class="text-danger validation-message"></span>
+   
+                        <label asp-for="Sex" class="control-label"></label>
+                        @Html.DropDownListFor(model => model.Sex, new SelectList(Enum.GetValues(typeof(LungMed.Models.Sex))), "Select...", new { @class = "form-control" })
+                        <span asp-validation-for="Sex" class="text-danger validation-message"></span>
+
+                        @* <label asp-for="DoctorId" class="control-label"></label>
+                        <select asp-for="DoctorId" class="form-control" asp-items="ViewBag.DoctorId"></select>
+                        <span asp-validation-for="DoctorId" class="text-danger validation-message"></span> *@
+                    </div>
+                    <div class="text-center">
+                        <a asp-action="Index" class="btn btn-secondary mt-3">Back to List</a>
+                        <button type="submit" class="btn btn-primary mt-3">Save Patient</button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </div>
+
+
 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+<style>
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .custom-form {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+
+        .custom-form .form-group {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .custom-form .form-label {
+            font-weight: bold;
+            color: #4a4a4a;
+        }
+
+        .custom-form .form-control {
+            border-radius: 0.25rem;
+            border: 1px solid #ced4da;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+            .custom-form .form-control:focus {
+                border-color: #80bdff;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            }
+
+    .btn-primary {
+        background-color: #d6536d;
+        border-color: #d6536d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #c4455c;
+            transform: translateY(-2px);
+        }
+
+    .btn-secondary {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+
+    .alert-success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+
+        .alert-success strong {
+            color: #155724;
+        }
+
+    .btn-danger {
+        background-color: #e74c3c;
+        border-color: #e74c3c;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+    .validation-message {
+        display: block;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .doctor-info {
+        margin: auto; /* To center horizontally */
+        width: 80%; /* Adjust width as needed */
+    }
+
+    .larger-text {
+        font-size: larger; /* Make text larger */
+    }
+
+</style>

@@ -8,7 +8,7 @@ namespace LungMed.ViewModels
         public string Id { get; set; }
 
         [DisplayName("Email")]
-
+        [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", ErrorMessage = "Invalid email address.")]
         public string Email { get; set; }
 
         [DisplayName("First Name")]
@@ -21,7 +21,6 @@ namespace LungMed.ViewModels
 
         [DisplayName("Password")]
         [Required(ErrorMessage = "Password is required")]
-        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [DisplayName("User Name")]

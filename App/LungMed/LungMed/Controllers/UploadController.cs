@@ -27,24 +27,40 @@ namespace LungMed.Controllers
             _userManager = userManager;
         }
 
-        // GET: Upload
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var user = await _userManager.GetUserAsync(User);
 
-            var user = _userManager.GetUserAsync(User).Result;
+            var recordingsQuery = _context.Recording.Include(r => r.Patient)
+                                                  .Where(r => r.PatientId == user.PatientId);
 
-            var recordings = _context.Recording
-                                   .Include(r => r.Patient)
-                                   .Where(r => r.PatientId == user.PatientId)
-                                   .ToList();
+            recordingsQuery = recordingsQuery.OrderByDescending(r => r.DateAdded);
+
+            var recordings = await recordingsQuery.ToListAsync();
 
             var viewModel = new RecordingViewModel
             {
                 Recordings = recordings
             };
 
+            if (User.IsInRole("Administrator"))
+            {
+                var recordingsAdmin = await _context.Recording.Include(r => r.Patient).ToListAsync();
+                recordingsAdmin = recordingsAdmin.OrderByDescending(r => r.DateAdded).ToList();
+                viewModel.Recordings = recordingsAdmin;
+
+            }
+
+            if (User.IsInRole("Lekarz"))
+            {
+                var recordingsDoctor = await _context.Recording.Include(r => r.Patient).Where(r => r.Patient.DoctorId == user.DoctorId).ToListAsync();
+                recordingsDoctor = recordingsDoctor.OrderByDescending(r => r.DateAdded).ToList();
+                viewModel.Recordings = recordingsDoctor;
+            }
+
             return View(viewModel);
         }
+
 
 
         // GET: Upload/UploadFile
@@ -52,6 +68,7 @@ namespace LungMed.Controllers
         public async Task<IActionResult> UploadFile()
         {
             var user = await _userManager.GetUserAsync(User);
+
             var patient = await _context.Patient.FirstOrDefaultAsync(p => p.Id == user.PatientId);
 
             if (patient == null)
@@ -81,7 +98,9 @@ namespace LungMed.Controllers
                 if (file != null && file.Length > 0)
                 {
                     // Ustalona nowa nazwa pliku bazująca na imieniu użytkownika
-                    string newFileName = patient.FirstName + patient.LastName + patient.PersonalNumber + Path.GetExtension(file.FileName);
+                    string currentDateTime = DateTime.Now.ToString("ddMMyyyy_HHmmss");
+                    string newFileName = $"{patient.Id}_{patient.FirstName}{patient.LastName}_{currentDateTime}{Path.GetExtension(file.FileName)}";
+
 
                     // Odczytanie zawartości pliku do tablicy bajtów
                     using (var memoryStream = new MemoryStream())

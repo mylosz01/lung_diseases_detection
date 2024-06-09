@@ -1,22 +1,100 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.btn:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb; /* zmieniony kolor w momencie klikniecia przycisku - obramowka */
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
+
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+main {
+    /*margin-top: 20px; /* Adjust this value as needed */
+
+    margin-bottom: 90px; /* Adjust this value as needed */
+}
+
+
+
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #d6536d; /* zmieniony kolor przycisku w momencie klikniêcia i po otrzymaniu focusu */
+    border-color: #d6536d;
+    color: white;
+}
+
+.btn-warning:hover,
+.btn-warning:active,
+.btn-warning:focus {
+    background-color: #d19b17; /* zmieniony kolor przycisku w momencie klikniêcia i po otrzymaniu focusu */
+    border-color: #d19b17;
+    color: white;
+}
+
+
+.nav-link {
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+    color: #343a40;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.5s ease;
+}
+
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(120deg, #ffa2b6, white); /* zmieniony kolor */
+        transition: all 0.6s ease-in-out;
+        z-index: -1;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-link:hover {
+        color: black;
+        transform: scale(1.05) rotate(-2deg);
+    }
+
+        .nav-link:hover::before {
+            width: 100%;
+            color: black;
+        }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #258cfb;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .nav-link:hover::after {
+        left: 0;
+        width: 100%;
+    }
+
+.navbar-brand {
+    font-size: 1.5em;
+    color: #ff7e5f;
 }

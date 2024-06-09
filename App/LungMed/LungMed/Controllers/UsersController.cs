@@ -71,24 +71,23 @@ namespace LungMed.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateAdmin(UserViewModel model)
         {
-            if (!ModelState.IsValid)
+
+            var user = new ApplicationUser
             {
-                return View(model);
-            }
-            ApplicationUser user = new ApplicationUser();
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                UserName = model.Email,
+                NormalizedUserName = model.Email,
+                Email = model.Email,
+                EmailConfirmed = true,
+                PhoneNumberConfirmed = true,
+                CreatedOn = DateTime.Now,
+                CreatedById = _userManager.GetUserId(User)
+
+            };
 
 
-            user.FirstName = model.FirstName;
-            user.LastName = model.LastName;
-
-
-            user.UserName = model.Email;
-            user.NormalizedUserName = model.Email;
-            user.Email = model.Email;
-            user.EmailConfirmed = true;
-            user.PhoneNumberConfirmed = true;
-            user.CreatedOn = DateTime.Now;
-            user.CreatedById = _userManager.GetUserId(User);
+            
 
             var adminRole = await _roleManager.FindByNameAsync("Administrator");
             if (adminRole != null)
@@ -105,25 +104,24 @@ namespace LungMed.Controllers
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, _context.Roles.FirstOrDefault(r => r.Id == user.RoleId).Name);
-
+                var role = await _context.Roles.FindAsync(adminRole.Id);
+                if (role != null)
+                {
+                    await _userManager.AddToRoleAsync(user, role.Name);
+                }
                 return RedirectToAction("Index");
             }
-            else
+
+
+            foreach (var error in result.Errors)
             {
-                foreach (var error in result.Errors)
-                {
-
-                    if (error.Code == "DuplicateUserName")
-                    {
-                        ModelState.AddModelError(string.Empty, "Konto o podanym adresie email już istnieje.");
-                        break;
-                    }
-                }
-
-                return View(model);
+                ModelState.AddModelError(string.Empty, error.Description);
             }
-            
+
+
+            return View(model);
+
+
         }
 
         //CREATE USER DOCTOR
@@ -138,11 +136,6 @@ namespace LungMed.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateDoctor(UserViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                await LoadDoctors(); // Ponowne załadowanie listy lekarzy
-                return View(model);
-            }
 
             ApplicationUser user = new ApplicationUser();
             int doctorId = int.Parse(model.Doctor);
@@ -174,23 +167,22 @@ namespace LungMed.Controllers
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, _context.Roles.FirstOrDefault(r => r.Id == user.RoleId).Name);
+                var role = await _context.Roles.FindAsync(doctorRole.Id);
+                if (role != null)
+                {
+                    await _userManager.AddToRoleAsync(user, role.Name);
+                }
                 return RedirectToAction("Index");
             }
-            else
-            {
-                foreach (var error in result.Errors)
-                {
-                    if (error.Code == "DuplicateUserName")
-                    {
-                        ModelState.AddModelError(string.Empty, "Konto o podanym adresie email już istnieje.");
-                        break;
-                    }
-                }
 
-                await LoadDoctors(); // Ponowne załadowanie listy lekarzy
-                return View(model);
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
             }
+
+            await LoadDoctors(); // Ponowne załadowanie listy lekarzy
+            return View(model);
+            
         }
 
         private async Task LoadDoctors()
@@ -198,7 +190,7 @@ namespace LungMed.Controllers
             var doctors = await _context.Doctor.Select(d => new
             {
                 Id = d.Id,
-                FullNameWithId = d.FirstName + " " + d.LastName + " (" + d.Id + ")"
+                FullNameWithId = d.FirstName + " " + d.LastName + " (Id: " + d.Id + ")"
             }).ToListAsync();
 
             ViewData["Doctor"] = new SelectList(doctors, "Id", "FullNameWithId");
@@ -214,11 +206,6 @@ namespace LungMed.Controllers
         [HttpPost]
         public async Task<ActionResult> CreatePatient(UserViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                await LoadPatients(); // Ponowne załadowanie listy pacjentów
-                return View(model);
-            }
 
             ApplicationUser user = new ApplicationUser();
             int patientId = int.Parse(model.Patient);
@@ -250,23 +237,23 @@ namespace LungMed.Controllers
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, _context.Roles.FirstOrDefault(r => r.Id == user.RoleId).Name);
+                var role = await _context.Roles.FindAsync(patientRole.Id);
+                if (role != null)
+                {
+                    await _userManager.AddToRoleAsync(user, role.Name);
+                }
                 return RedirectToAction("Index");
             }
-            else
-            {
-                foreach (var error in result.Errors)
-                {
-                    if (error.Code == "DuplicateUserName")
-                    {
-                        ModelState.AddModelError(string.Empty, "Konto o podanym adresie email już istnieje.");
-                        break;
-                    }
-                }
 
-                await LoadPatients(); // Ponowne załadowanie listy pacjentów
-                return View(model);
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
             }
+
+
+            await LoadPatients(); 
+            return View(model);
         }
 
         private async Task LoadPatients()
@@ -274,7 +261,7 @@ namespace LungMed.Controllers
             var patients = await _context.Patient.Select(d => new
             {
                 Id = d.Id,
-                FullNameWithIdAndPersonal = d.FirstName + " " + d.LastName + " (" + d.PersonalNumber + ")"
+                FullNameWithIdAndPersonal = d.FirstName + " " + d.LastName + " (Personal Number: " + d.PersonalNumber + ")"
             }).ToListAsync();
 
             ViewData["Patient"] = new SelectList(patients, "Id", "FullNameWithIdAndPersonal");

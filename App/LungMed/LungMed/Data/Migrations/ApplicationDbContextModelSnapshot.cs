@@ -136,7 +136,7 @@ namespace LungMed.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Doctor");
+                    b.ToTable("Doctor", (string)null);
                 });
 
             modelBuilder.Entity("LungMed.Models.HealthCard", b =>
@@ -148,24 +148,29 @@ namespace LungMed.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Allergies")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BleedingDisorders")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Diseases")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Medicines")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PatientId")
                         .HasColumnType("int");
 
                     b.Property<bool?>("Pregnancy")
+                        .IsRequired()
                         .HasColumnType("bit");
 
                     b.Property<int?>("PregnancyWeek")
@@ -175,7 +180,7 @@ namespace LungMed.Data.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("HealthCard");
+                    b.ToTable("HealthCard", (string)null);
                 });
 
             modelBuilder.Entity("LungMed.Models.Patient", b =>
@@ -215,7 +220,7 @@ namespace LungMed.Data.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("Patient");
+                    b.ToTable("Patient", (string)null);
                 });
 
             modelBuilder.Entity("LungMed.Models.Recording", b =>
@@ -244,7 +249,7 @@ namespace LungMed.Data.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("Recording");
+                    b.ToTable("Recording", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

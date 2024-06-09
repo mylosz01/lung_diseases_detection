@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LungMed.Validators
 {
@@ -6,12 +7,11 @@ namespace LungMed.Validators
     {
         public override bool IsValid(object value)
         {
-            if (value is DateTime date)
+            if (value is DateTime dateTime)
             {
-                ErrorMessage = "Date must be before today";
-                return date < DateTime.Now;
+                return dateTime < DateTime.Now;
             }
-            return false;
+            return true; // or false depending on your requirements
         }
     }
 }

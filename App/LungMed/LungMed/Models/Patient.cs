@@ -1,10 +1,13 @@
 ﻿using LungMed.Validators;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LungMed.Models
 {
+    [Index(nameof(PersonalNumber), IsUnique = true)]
+    [Index(nameof(PhoneNumber), IsUnique = true)]
     public class Patient
     {
         public int Id { get; set; }

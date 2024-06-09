@@ -39,6 +39,9 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="HealthCards" asp-action="Index">Health Cards</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Upload" asp-action="Index">Recordings</a>
+                            </li>
                             
                         }
                         else if(User.IsInRole("Lekarz"))
@@ -46,11 +49,20 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Patients" asp-action="Index">Patients</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="HealthCards" asp-action="Index">Health Cards</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Upload" asp-action="Index">Recordings</a>
+                            </li>
                         }
                         else if (User.IsInRole("Pacjent"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Upload" asp-action="Index">Upload File</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Upload" asp-action="Index">Recordings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="HealthCards" asp-action="Index">Health Cards</a>
                             </li>
                         }
                     </ul>
@@ -76,3 +88,21 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
+
+<style>
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        color: #343a40;
+        margin-top: 20px;
+    }
+
+</style>
