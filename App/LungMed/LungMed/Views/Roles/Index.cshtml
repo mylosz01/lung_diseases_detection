@@ -1,0 +1,158 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<IdentityRole>
+@{
+    ViewData["Title"] = "Roles";
+}
+
+
+<div class="container">
+    <h1 >Roles</h1>
+
+    <p class="text-center">
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fa fa-plus"></i> Create New Role
+        </a>
+    </p>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Roles List</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Role No</th>
+                        <th>Role Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+@*                             <td class="text-center">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning"><i class="fa fa-edit"></i>Edit</a>
+                            </td> *@
+                            <td class="text-center">
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa fa-edit"></i>Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+<style>
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        text-align: center;
+        color: #343a40;
+        margin-top: 20px;
+    }
+
+    .container {
+        max-width: 1500px; /* Zwiększenie szerokości kontenera */
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .btn-primary {
+        background-color: #d6536d;
+        border-color: #d6536d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #c4455c;
+            transform: translateY(-2px);
+        }
+
+    .btn-warning {
+        background-color: #efb11d;
+        border-color: #efb11d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-warning:hover {
+            background-color: #d19b17;
+            transform: translateY(-2px);
+        }
+
+    .btn-danger {
+        background-color: #e74c3c;
+        border-color: #e74c3c;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+    .card {
+        margin-top: 20px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #ff7f50; /* Zmiana koloru na koralowy */
+        color: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-title {
+        margin: 0;
+        padding: 10px;
+        font-size: 1.2em;
+    }
+
+    .card-body {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 20px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f1f1f1;
+            color: #343a40;
+        }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+
+</style>

@@ -1,0 +1,157 @@
+﻿@model LungMed.ViewModels.RecordingViewModel
+
+@{
+    ViewData["Title"] = "Recordings";
+}
+
+<style>
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        text-align: center;
+        color: #343a40;
+        margin-top: 20px;
+    }
+
+    .container {
+        max-width: 1500px; /* Zwiększenie szerokości kontenera */
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .btn-primary {
+        background-color: #d6536d;
+        border-color: #d6536d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #d6536d;
+            transform: translateY(-2px);
+        }
+
+    .card {
+        margin-top: 20px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #ff7f50; /* Zmiana koloru na koralowy */
+        color: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-title {
+        margin: 0;
+        padding: 10px;
+        font-size: 1.2em;
+    }
+
+    .card-body {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 20px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f1f1f1;
+            color: #343a40;
+        }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .btn-danger {
+        background-color: #e74c3c;
+        border-color: #e74c3c;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+    .no-recordings {
+        text-align: center;
+        color: #6c757d;
+        font-size: 1.1em;
+    }
+</style>
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    @if (User.IsInRole("Pacjent"))
+    {
+        <p class="text-center">
+            <a asp-action="UploadFile" class="btn btn-primary">
+                <i class="fa fa-plus"></i> Upload a new recording
+            </a>
+        </p>
+    }
+
+    @if (Model.Recordings != null && Model.Recordings.Count > 0)
+    {
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Recordings List</h3>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Upload Date</th>
+                            <th>Patient</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var recording in Model.Recordings)
+                        {
+                            <tr>
+                                <td>@recording.FileName</td>
+                                <td>@recording.DateAdded.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                                <td>@(recording.Patient != null ? recording.Patient.FirstName + " " + recording.Patient.LastName : "Unknown")</td>
+                                <td class="text-center">
+                                    <a asp-action="Delete" asp-route-id="@recording.Id" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p class="no-recordings">No recordings uploaded.</p>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

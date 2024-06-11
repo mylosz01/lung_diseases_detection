@@ -1,0 +1,102 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<h1 class="text-center">@ViewData["Title"]</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card">
+                <section>
+                    <form id="account" method="post">
+                        <h2 class="text-center">Use a local account to log in.</h2>
+                        <hr />
+                        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                            <label asp-for="Input.Email" class="form-label">Email</label>
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                            <label asp-for="Input.Password" class="form-label">Password</label>
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div>
+                            <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+<style>
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+        margin-top: 20px;
+        color: #343a40;
+    }
+
+    h2 {
+        color: #343a40;
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+        padding: 10px;
+    }
+
+    .form-label {
+        color: #6c757d;
+    }
+
+    .btn-primary:active,
+    .btn-primary:focus {
+        background-color: #ff7f50; /* zmieniony kolor przycisku w momencie kliknięcia i po otrzymaniu focusu */
+        border-color: #ff7f50;
+    }
+    .btn-primary {
+        background-color: #ff7f50;
+        border-color: #ff7f50;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #ff7f50;
+            border-color: #ff7f50;
+            transform: translateY(-2px);
+        }
+
+    .text-danger {
+        font-size: 0.9em;
+        color: #d6536d;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+</style>
+

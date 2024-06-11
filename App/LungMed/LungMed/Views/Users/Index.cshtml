@@ -1,0 +1,180 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model LungMed.ViewModels.UserSearchViewModel
+@{
+    ViewData["Title"] = "Users";
+}
+
+<div class="container">
+    <h1>Users</h1>
+
+    <p class="text-center">
+        <a asp-action="CreateAdmin" class="btn btn-primary"><i class="fa fa-plus"></i> Create user for admin</a>
+        <a asp-action="CreateDoctor" class="btn btn-primary"><i class="fa fa-plus"></i> Create user for doctor</a>
+        <a asp-action="CreatePatient" class="btn btn-primary"><i class="fa fa-plus"></i> Create user for patient</a>
+    </p>
+
+    <form asp-controller="Users" asp-action="Index" method="get">
+        <div class="row align-items-center mb-3">
+            <div class="col-md-2">
+                <select asp-for="RoleSearchString" asp-items="Model.Roles" class="form-control">
+                    <option value="">All</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <input type="text" id="LastNameSearchString" name="LastNameSearchString" class="form-control" placeholder="Enter last name..." />
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-warning">Filter</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='@Url.Action("Index", "Users")'">Reset</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Users List</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Doctor ID</th>
+                        <th>Patient ID</th>
+                        <th>Role Name</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Users == null || !Model.Users.Any())
+                    {
+                        <tr>
+                            <td colspan="7" class="text-center">No users found.</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var item in Model.Users)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modeliteam => item.FirstName)</td>
+                                <td>@Html.DisplayFor(modeliteam => item.LastName)</td>
+                                <td>@Html.DisplayFor(modeliteam => item.DoctorId)</td>
+                                <td>@Html.DisplayFor(modeliteam => item.PatientId)</td>
+                                <td>@Html.DisplayFor(modeliteam => item.Role.Name)</td>
+                                <td>@Html.DisplayFor(modeliteam => item.Email)</td>
+                                <td class="text-center">
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        text-align: center;
+        color: #343a40;
+        margin-top: 20px;
+    }
+
+    .container {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .btn-primary {
+        background-color: #d6536d;
+        border-color: #d6536d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #c4455c;
+            transform: translateY(-2px);
+        }
+
+    .btn-warning {
+        background-color: #efb11d;
+        border-color: #efb11d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-warning:hover {
+            background-color: #d19b17;
+            transform: translateY(-2px);
+        }
+
+    .btn-danger {
+        background-color: #e74c3c;
+        border-color: #e74c3c;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+    .card {
+        margin-top: 20px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #ff7f50;
+        color: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-title {
+        margin: 0;
+        padding: 10px;
+        font-size: 1.2em;
+    }
+
+    .card-body {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 20px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f1f1f1;
+            color: #343a40;
+        }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+</style>

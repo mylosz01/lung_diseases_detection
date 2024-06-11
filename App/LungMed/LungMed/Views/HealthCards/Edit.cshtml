@@ -1,0 +1,181 @@
+﻿@model LungMed.Models.HealthCard
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2 class="text-center my-4">Edit Health Card</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="shadow p-4 rounded bg-light custom-form">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="patient-info mb-4 p-1 rounded text-center">
+                        <h5>Patient Information</h5>
+                        <p><strong><span class="larger-text">@Html.DisplayFor(model => model.Patient.FullNameWithIdAndPersonal)</span></strong></p>
+                    </div>
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="PatientId" /> <!-- Hidden field to keep the PatientId -->
+                    <div class="form-group">
+                        <h4>Health Card</h4>
+                        <hr />
+                        <label asp-for="Medicines" class="control-label"></label>
+                        <textarea asp-for="Medicines" class="form-control" rows="3" cols="50"></textarea>
+                        <span asp-validation-for="Medicines" class="text-danger validation-message"></span>
+
+                        <label asp-for="Diseases" class="control-label"></label>
+                        <textarea asp-for="Diseases" class="form-control" rows="3" cols="50"></textarea>
+                        <span asp-validation-for="Diseases" class="text-danger validation-message"></span>
+
+                        <label asp-for="Allergies" class="control-label"></label>
+                        <textarea asp-for="Allergies" class="form-control" rows="3" cols="50"></textarea>
+                        <span asp-validation-for="Allergies" class="text-danger validation-message"></span>
+
+                        <label asp-for="BleedingDisorders" class="control-label"></label>
+                        <textarea asp-for="BleedingDisorders" class="form-control" rows="3" cols="50"></textarea>
+                        <span asp-validation-for="BleedingDisorders" class="text-danger validation-message"></span>
+
+                        <label asp-for="Pregnancy" class="control-label"></label>
+                        @Html.DropDownListFor(model => model.Pregnancy, new SelectList(new List<string> { "True", "False" }), "Select...", new { @class = "form-control", @id = "pregnancy-select" })
+                        <span asp-validation-for="Pregnancy" class="text-danger validation-message"></span>
+
+                        <div class="form-group" id="pregnancy-week-group" style="display:none;">
+                            <label asp-for="PregnancyWeek" class="control-label"></label>
+                            <input asp-for="PregnancyWeek" class="form-control" type="number" min="1" />
+                            <span asp-validation-for="PregnancyWeek" class="text-danger validation-message"></span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a asp-action="Index" class="btn btn-secondary mt-3">Back to List</a>
+                        <button type="submit" class="btn btn-primary mt-3">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var pregnancySelect = document.getElementById("pregnancy-select");
+            var pregnancyWeekGroup = document.getElementById("pregnancy-week-group");
+
+            function togglePregnancyWeek() {
+                if (pregnancySelect.value === "True") {
+                    pregnancyWeekGroup.style.display = "block";
+                } else {
+                    pregnancyWeekGroup.style.display = "none";
+                }
+            }
+
+            pregnancySelect.addEventListener("change", togglePregnancyWeek);
+
+            // Initialize visibility on page load
+            togglePregnancyWeek();
+        });
+    </script>
+}
+
+
+<style>
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .custom-form {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+
+        .custom-form .form-group {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .custom-form .form-label {
+            font-weight: bold;
+            color: #4a4a4a;
+        }
+
+        .custom-form .form-control {
+            border-radius: 0.25rem;
+            border: 1px solid #ced4da;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+            .custom-form .form-control:focus {
+                border-color: #80bdff;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            }
+
+    .btn-primary {
+        background-color: #d6536d;
+        border-color: #d6536d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #c4455c;
+            transform: translateY(-2px);
+        }
+
+    .btn-secondary {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+
+    .alert-success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+
+        .alert-success strong {
+            color: #155724;
+        }
+
+    .btn-danger {
+        background-color: #e74c3c;
+        border-color: #e74c3c;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+    .validation-message {
+        display: block;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .patient-info {
+        margin: auto; /* To center horizontally */
+        width: 80%; /* Adjust width as needed */
+    }
+
+    .larger-text {
+        font-size: larger; /* Make text larger */
+    }
+</style>

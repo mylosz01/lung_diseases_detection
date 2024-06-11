@@ -1,0 +1,1200 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\patients\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\patients\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\data\\migrations\\20240503141808_addingtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\data\\migrations\\20240503141808_addingtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\patients\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\patients\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\patients\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\patients\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\patients\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\patients\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\patients\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\patients\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240606224904_UpdateDate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:LungMed\\Data\\Migrations\\20240606224904_UpdateDate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\data\\migrations\\20240606134659_updatepatient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\data\\migrations\\20240606134659_updatepatient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\healthcards\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\healthcards\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\controllers\\healthcardscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\controllers\\healthcardscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\models\\recording.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\models\\recording.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\upload\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\upload\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\validators\\datebeforetodayattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\validators\\datebeforetodayattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\viewmodels\\recordingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\viewmodels\\recordingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\viewmodels\\rolesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\viewmodels\\rolesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\viewmodels\\healthcardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\viewmodels\\healthcardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\models\\healthcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\models\\healthcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\healthcards\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\healthcards\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\roles\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\roles\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\upload\\uploadfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\upload\\uploadfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\doctors\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\doctors\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\healthcards\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\healthcards\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\healthcards\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\healthcards\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\users\\createpatient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\users\\createpatient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\healthcards\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\healthcards\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\doctors\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\doctors\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\controllers\\doctorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\controllers\\doctorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\roles\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\roles\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\users\\createadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\users\\createadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\users\\createdoctor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\users\\createdoctor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\doctors\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\doctors\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\roles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\roles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\areas\\identity\\pages\\account\\manage\\_managenav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\areas\\identity\\pages\\account\\manage\\_managenav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\doctors\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\doctors\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\doctors\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\doctors\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\viewmodels\\patientviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\viewmodels\\patientviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\viewmodels\\doctorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\viewmodels\\doctorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\areas\\identity\\pages\\account\\manage\\managenavpages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\areas\\identity\\pages\\account\\manage\\managenavpages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\areas\\identity\\pages\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\areas\\identity\\pages\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\areas\\identity\\pages\\account\\registerconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\areas\\identity\\pages\\account\\registerconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\areas\\identity\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\areas\\identity\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\areas\\identity\\pages\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\areas\\identity\\pages\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\areas\\identity\\pages\\account\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\areas\\identity\\pages\\account\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\areas\\identity\\pages\\account\\manage\\setpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\areas\\identity\\pages\\account\\manage\\setpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\areas\\identity\\pages\\account\\manage\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\areas\\identity\\pages\\account\\manage\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\roles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\roles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\users\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\users\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\data\\migrations\\20240503195041_addingrowsinapplicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\data\\migrations\\20240503195041_addingrowsinapplicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\data\\migrations\\20240602222850_addrecording.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\data\\migrations\\20240602222850_addrecording.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\data\\migrations\\20240602225927_updaterecordings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\data\\migrations\\20240602225927_updaterecordings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\viewmodels\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\viewmodels\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\users\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\users\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\upload\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\upload\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|c:\\users\\zuzanna\\desktop\\lungmed\\lungmed\\lungmed\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D3D7-2248-4320-A57F-A5553268F9F5}|LungMed\\LungMed.csproj|solutionrelative:lungmed\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1184,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "LungMed\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "LungMed\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAuwGQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-03T23:14:55.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Patients\\Details.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Patients\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Patients\\Details.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Patients\\Details.cshtml",
+              "ViewState": "AQIAACgAAAAAAAAAAAAhwD0AAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T11:31:40.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T18:56:27.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\appsettings.json",
+              "RelativeDocumentMoniker": "LungMed\\appsettings.json",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\appsettings.json",
+              "RelativeToolTip": "LungMed\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-02T18:51:20.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Program.cs",
+              "RelativeDocumentMoniker": "LungMed\\Program.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Program.cs",
+              "RelativeToolTip": "LungMed\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T19:23:18.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Patients\\Index.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Patients\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Patients\\Index.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Patients\\Index.cshtml",
+              "ViewState": "AQIAACwAAAAAAAAAAAAowEAAAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T23:00:33.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Models\\Patient.cs",
+              "RelativeDocumentMoniker": "LungMed\\Models\\Patient.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Models\\Patient.cs",
+              "RelativeToolTip": "LungMed\\Models\\Patient.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:24:10.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20240503141808_AddingTables.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240503141808_AddingTables.cs",
+              "RelativeDocumentMoniker": "LungMed\\Data\\Migrations\\20240503141808_AddingTables.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240503141808_AddingTables.cs",
+              "RelativeToolTip": "LungMed\\Data\\Migrations\\20240503141808_AddingTables.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAACYAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T19:28:37.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Patients\\Edit.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Patients\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Patients\\Edit.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Patients\\Edit.cshtml",
+              "ViewState": "AQIAABMAAAAAAAAAAAAowC0AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T11:27:12.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "20240606134659_UpdatePatient.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240606134659_UpdatePatient.cs",
+              "RelativeDocumentMoniker": "LungMed\\Data\\Migrations\\20240606134659_UpdatePatient.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240606134659_UpdatePatient.cs",
+              "RelativeToolTip": "LungMed\\Data\\Migrations\\20240606134659_UpdatePatient.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T13:54:31.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Patients\\Delete.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Patients\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Patients\\Delete.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Patients\\Delete.cshtml",
+              "ViewState": "AQIAACsAAAAAAAAAAAAswD8AAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T11:37:24.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "LungMed\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "LungMed\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:26:06.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "20240606224904_UpdateDate.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240606224904_UpdateDate.cs",
+              "RelativeDocumentMoniker": "LungMed\\Data\\Migrations\\20240606224904_UpdateDate.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240606224904_UpdateDate.cs",
+              "RelativeToolTip": "LungMed\\Data\\Migrations\\20240606224904_UpdateDate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T22:49:04.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Upload\\Index.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Upload\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Upload\\Index.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Upload\\Index.cshtml",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAAAH4AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T22:46:03.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Recording.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Models\\Recording.cs",
+              "RelativeDocumentMoniker": "LungMed\\Models\\Recording.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Models\\Recording.cs",
+              "RelativeToolTip": "LungMed\\Models\\Recording.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:23:45.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Doctor.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Models\\Doctor.cs",
+              "RelativeDocumentMoniker": "LungMed\\Models\\Doctor.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Models\\Doctor.cs",
+              "RelativeToolTip": "LungMed\\Models\\Doctor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:24:26.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UploadController.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\UploadController.cs",
+              "RelativeDocumentMoniker": "LungMed\\Controllers\\UploadController.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\UploadController.cs",
+              "RelativeToolTip": "LungMed\\Controllers\\UploadController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAcwB8AAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T13:58:45.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DateBeforeTodayAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Validators\\DateBeforeTodayAttribute.cs",
+              "RelativeDocumentMoniker": "LungMed\\Validators\\DateBeforeTodayAttribute.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Validators\\DateBeforeTodayAttribute.cs",
+              "RelativeToolTip": "LungMed\\Validators\\DateBeforeTodayAttribute.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T20:00:32.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "HealthCardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\ViewModels\\HealthCardViewModel.cs",
+              "RelativeDocumentMoniker": "LungMed\\ViewModels\\HealthCardViewModel.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\ViewModels\\HealthCardViewModel.cs",
+              "RelativeToolTip": "LungMed\\ViewModels\\HealthCardViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:55:58.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "RolesViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\ViewModels\\RolesViewModel.cs",
+              "RelativeDocumentMoniker": "LungMed\\ViewModels\\RolesViewModel.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\ViewModels\\RolesViewModel.cs",
+              "RelativeToolTip": "LungMed\\ViewModels\\RolesViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:56:03.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "RecordingViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\ViewModels\\RecordingViewModel.cs",
+              "RelativeDocumentMoniker": "LungMed\\ViewModels\\RecordingViewModel.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\ViewModels\\RecordingViewModel.cs",
+              "RelativeToolTip": "LungMed\\ViewModels\\RecordingViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:56:28.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "HealthCard.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Models\\HealthCard.cs",
+              "RelativeDocumentMoniker": "LungMed\\Models\\HealthCard.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Models\\HealthCard.cs",
+              "RelativeToolTip": "LungMed\\Models\\HealthCard.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:18:52.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "LungMed\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "LungMed\\Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:24:22.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Doctors\\Index.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Doctors\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Doctors\\Index.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Doctors\\Index.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAADoAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T23:00:49.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UploadFile.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Upload\\UploadFile.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Upload\\UploadFile.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Upload\\UploadFile.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Upload\\UploadFile.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-06T18:44:15.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\Index.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Users\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\Index.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Users\\Index.cshtml",
+              "ViewState": "AQIAACUAAAAAAAAAAAAAADUAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T23:01:28.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Doctors\\Edit.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Doctors\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Doctors\\Edit.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Doctors\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T00:53:48.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "DoctorsController.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\DoctorsController.cs",
+              "RelativeDocumentMoniker": "LungMed\\Controllers\\DoctorsController.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\DoctorsController.cs",
+              "RelativeToolTip": "LungMed\\Controllers\\DoctorsController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAhwHoAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:31:17.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "CreateDoctor.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\CreateDoctor.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Users\\CreateDoctor.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\CreateDoctor.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Users\\CreateDoctor.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T13:16:29.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "CreateAdmin.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\CreateAdmin.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Users\\CreateAdmin.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\CreateAdmin.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Users\\CreateAdmin.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T13:16:50.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Doctors\\Create.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Doctors\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Doctors\\Create.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Doctors\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T00:41:30.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Roles\\Delete.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Roles\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Roles\\Delete.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Roles\\Delete.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T11:57:27.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T12:25:48.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "PatientViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\ViewModels\\PatientViewModel.cs",
+              "RelativeDocumentMoniker": "LungMed\\ViewModels\\PatientViewModel.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\ViewModels\\PatientViewModel.cs",
+              "RelativeToolTip": "LungMed\\ViewModels\\PatientViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:55:38.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "_ManageNav.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
+              "RelativeToolTip": "LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T00:16:42.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Roles\\Index.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Roles\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Roles\\Index.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Roles\\Index.cshtml",
+              "ViewState": "AQIAAAoAAAAAAAAAAABBwBgAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T23:00:37.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Doctors\\Details.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Doctors\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Doctors\\Details.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Doctors\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T01:08:18.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "DoctorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\ViewModels\\DoctorViewModel.cs",
+              "RelativeDocumentMoniker": "LungMed\\ViewModels\\DoctorViewModel.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\ViewModels\\DoctorViewModel.cs",
+              "RelativeToolTip": "LungMed\\ViewModels\\DoctorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:55:55.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Doctors\\Delete.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Doctors\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Doctors\\Delete.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Doctors\\Delete.cshtml",
+              "ViewState": "AQIAABYAAAAAAAAAAABBwDEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T00:46:20.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "LungMed\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T09:28:38.122Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "ManageNavPages.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\ManageNavPages.cs",
+              "RelativeDocumentMoniker": "LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\ManageNavPages.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\ManageNavPages.cs",
+              "RelativeToolTip": "LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\ManageNavPages.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAjwEMAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T00:16:51.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "RegisterConfirmation.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+              "RelativeToolTip": "LungMed\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T09:28:36.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "LungMed\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T09:28:36.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Logout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "RelativeToolTip": "LungMed\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T09:28:35.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
+              "RelativeToolTip": "LungMed\\Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T09:28:31.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+              "RelativeToolTip": "LungMed\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T09:28:30.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "SetPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\SetPassword.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\SetPassword.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\SetPassword.cshtml",
+              "RelativeToolTip": "LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\SetPassword.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T00:18:07.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Roles\\Edit.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Roles\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Roles\\Edit.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Roles\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T12:24:49.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "LungMed\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFAAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T23:20:12.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
+              "RelativeToolTip": "LungMed\\Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T00:17:26.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\Edit.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Users\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\Edit.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Users\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T00:53:55.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "LungMed\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "LungMed\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAAOMAAAAAAAAAAAAIwP4AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T16:31:43.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "UserViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\ViewModels\\UserViewModel.cs",
+              "RelativeDocumentMoniker": "LungMed\\ViewModels\\UserViewModel.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\ViewModels\\UserViewModel.cs",
+              "RelativeToolTip": "LungMed\\ViewModels\\UserViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:55:25.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "20240503195041_AddingRowsInApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240503195041_AddingRowsInApplicationUser.cs",
+              "RelativeDocumentMoniker": "LungMed\\Data\\Migrations\\20240503195041_AddingRowsInApplicationUser.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240503195041_AddingRowsInApplicationUser.cs",
+              "RelativeToolTip": "LungMed\\Data\\Migrations\\20240503195041_AddingRowsInApplicationUser.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAABBwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T19:28:17.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "RolesController.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\RolesController.cs",
+              "RelativeDocumentMoniker": "LungMed\\Controllers\\RolesController.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\RolesController.cs",
+              "RelativeToolTip": "LungMed\\Controllers\\RolesController.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAABBwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T19:33:34.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "20240602222850_AddRecording.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240602222850_AddRecording.cs",
+              "RelativeDocumentMoniker": "LungMed\\Data\\Migrations\\20240602222850_AddRecording.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240602222850_AddRecording.cs",
+              "RelativeToolTip": "LungMed\\Data\\Migrations\\20240602222850_AddRecording.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T19:27:24.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "20240602225927_UpdateRecordings.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240602225927_UpdateRecordings.cs",
+              "RelativeDocumentMoniker": "LungMed\\Data\\Migrations\\20240602225927_UpdateRecordings.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Data\\Migrations\\20240602225927_UpdateRecordings.cs",
+              "RelativeToolTip": "LungMed\\Data\\Migrations\\20240602225927_UpdateRecordings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:59:27.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\Create.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Users\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\Create.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Users\\Create.cshtml",
+              "ViewState": "AQIAABYAAAAAAAAAAABBwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T13:16:42.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Upload\\Delete.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Upload\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Upload\\Delete.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Upload\\Delete.cshtml",
+              "ViewState": "AQIAAAcAAAAAAAAAAABBwA0AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T16:21:32.421Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "LungMed\\Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "LungMed\\Models\\ApplicationUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T13:51:06.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T23:08:15.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "LungMed\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "LungMed\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T23:47:01.717Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 568,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\HealthCards\\Edit.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\HealthCards\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\HealthCards\\Edit.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\HealthCards\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-06T12:50:15.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Patients\\Create.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Patients\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Patients\\Create.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Patients\\Create.cshtml",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAowBcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T19:18:36.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PatientsController.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\PatientsController.cs",
+              "RelativeDocumentMoniker": "LungMed\\Controllers\\PatientsController.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\PatientsController.cs",
+              "RelativeToolTip": "LungMed\\Controllers\\PatientsController.cs",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAQwKEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T22:31:33.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\HealthCards\\Create.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\HealthCards\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\HealthCards\\Create.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\HealthCards\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T13:15:24.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\HealthCards\\Index.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\HealthCards\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\HealthCards\\Index.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\HealthCards\\Index.cshtml",
+              "ViewState": "AQIAANUAAAAAAAAAAAAAABsAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T12:31:44.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "HealthCardsController.cs",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\HealthCardsController.cs",
+              "RelativeDocumentMoniker": "LungMed\\Controllers\\HealthCardsController.cs",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Controllers\\HealthCardsController.cs",
+              "RelativeToolTip": "LungMed\\Controllers\\HealthCardsController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAADkAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T12:57:43.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CreatePatient.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\CreatePatient.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Users\\CreatePatient.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\CreatePatient.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Users\\CreatePatient.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T13:16:31.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Roles\\Create.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Roles\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Roles\\Create.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Roles\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T11:49:57.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\HealthCards\\Delete.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\HealthCards\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\HealthCards\\Delete.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\HealthCards\\Delete.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-06T15:07:46.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\HealthCards\\Details.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\HealthCards\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\HealthCards\\Details.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\HealthCards\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-06T13:17:28.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\Delete.cshtml",
+              "RelativeDocumentMoniker": "LungMed\\Views\\Users\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\Views\\Users\\Delete.cshtml",
+              "RelativeToolTip": "LungMed\\Views\\Users\\Delete.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T00:17:09.408Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
