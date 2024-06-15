@@ -33,7 +33,7 @@
     }
 
         .btn-primary:hover {
-            background-color: #d6536d;
+            background-color: #c4455c;
             transform: translateY(-2px);
         }
 
@@ -99,6 +99,24 @@
         color: #6c757d;
         font-size: 1.1em;
     }
+
+    .text-wrap {
+        word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+        word-break: break-word; /* Break long words if they cannot wrap */
+        white-space: normal; /* Allow the text to wrap normally */
+    }
+
+    .btn-warning {
+        background-color: #efb11d;
+        border-color: #efb11d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-warning:hover {
+            background-color: #d19b17;
+            transform: translateY(-2px);
+        }
 </style>
 
 <div class="container">
@@ -126,6 +144,10 @@
                             <th>File Name</th>
                             <th>Upload Date</th>
                             <th>Patient</th>
+                            <th>Model Result</th>
+                            <th>Doctor Approve</th>
+                            <th>Modification Date</th>
+                            <th></th>
                             <th></th>
                         </tr>
                     </thead>
@@ -136,6 +158,24 @@
                                 <td>@recording.FileName</td>
                                 <td>@recording.DateAdded.ToString("dd/MM/yyyy HH:mm:ss")</td>
                                 <td>@(recording.Patient != null ? recording.Patient.FirstName + " " + recording.Patient.LastName : "Unknown")</td>
+                                <td>@recording.ModelResult</td>
+                                @* <td>@recording.DoctorApprove</td> *@
+                                <td>@if (recording.DoctorApprove == true){
+                                        <text>Approved</text>
+                                }
+                                    else if (recording.DoctorApprove == false)
+                                {
+                                <text>Not Approved</text>
+                                }
+                                else
+                                {
+                                <text>Unknown</text>
+                                }
+                                </td>
+                                <td>@recording.ModificationDate</td>
+                                <td class="text-center">
+                                    <a asp-action="Details" asp-route-id="@recording.Id" class="btn btn-warning">Details</a>
+                                </td>
                                 <td class="text-center">
                                     <a asp-action="Delete" asp-route-id="@recording.Id" class="btn btn-danger">Delete</a>
                                 </td>

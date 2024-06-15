@@ -18,6 +18,7 @@ DISEASE_LIST = ['Asthma','Bronchiectasis','Bronchiolitis','COPD','Covid-19','Hea
 
 PATH_TO_MODEL = os.path.join("./Prediction_Model","Python_Scripts","Model","best_model.keras")
 
+
 class Predict_Diseases:
 
     model = None

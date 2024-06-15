@@ -1,0 +1,221 @@
+﻿@model LungMed.Models.Recording
+
+@{
+    ViewData["Title"] = "Recording Details";
+}
+
+<h2 class="text-center my-4">Recording Details</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="shadow p-4 rounded bg-light custom-form">
+                <div class="patient-info mb-4 p-1 rounded text-center">
+                    <h5>Patient Information</h5>
+                    <p><strong><span class="larger-text">@Html.DisplayFor(model => model.Patient.FullNameWithIdAndPersonal)</span></strong></p>
+                    <h5>Doctor Information</h5>
+                    <p><strong><span class="larger-text">@Html.ViewBag.DoctorDetails</span></strong></p>
+                </div>
+                <div class="text-center">
+                    @if (User.IsInRole("Lekarz"))
+                    {
+                        <a asp-action="Approve" asp-route-id="@Model.Id" class="btn btn-success mt-3">Approve</a>
+                        <a asp-action="Reject" asp-route-id="@Model.Id" class="btn btn-danger mt-3">Reject</a>
+                    }
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <h4>Recording</h4>
+                        <hr />
+                        <dl class="row">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.FileName)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.FileName)
+                            </dd>
+                        </dl>
+
+                        <dl class="row">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.DateAdded)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.DateAdded)
+                            </dd>
+                        </dl>
+
+                        <dl class="row">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.ModelResult)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.ModelResult)
+                            </dd>
+                        </dl>
+
+                        <dl class="row">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.DoctorApprove)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @if (Model.DoctorApprove == true)
+                                {
+                                    <text>Approved</text>
+                                }
+                                else if (Model.DoctorApprove == false)
+                                {
+                                    <text>Not Approved</text>
+                                }
+                                else
+                                {
+                                    <text>Unknown</text>
+                                }
+                            </dd>
+                        </dl>
+
+                        <dl class="row">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.ModificationDate)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.ModificationDate)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a asp-action="Index" class="btn btn-secondary mt-3">Back to List</a>     
+                    <a asp-action="DownloadFile" asp-route-id="@Model.Id" class="btn btn-primary mt-3">Download</a>
+                </div>
+                @* <div class="text-center">
+                    @if (User.IsInRole("Administrator") || User.IsInRole("Lekarz"))
+                    {
+                        <a asp-action="Approve" asp-route-id="@Model.Id" class="btn btn-success mt-3">Approve</a>
+                        <a asp-action="Reject" asp-route-id="@Model.Id" class="btn btn-danger mt-3">Reject</a>
+                    }
+                </div> *@
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card-body dl.row dd {
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: normal;
+    }
+
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .custom-form {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+
+        .custom-form .form-group {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .custom-form .form-label {
+            font-weight: bold;
+            color: #4a4a4a;
+        }
+
+        .custom-form .form-control {
+            border-radius: 0.25rem;
+            border: 1px solid #ced4da;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+            .custom-form .form-control:focus {
+                border-color: #80bdff;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            }
+
+    .btn-primary {
+        background-color: #d6536d;
+        border-color: #d6536d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #c4455c;
+            transform: translateY(-2px);
+        }
+
+    .btn-secondary {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+
+    .alert-success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+
+        .alert-success strong {
+            color: #155724;
+        }
+
+
+    .btn-danger {
+        background-color: #e74c3c;
+        border-color: #e74c3c;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+    .btn-success{
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+        .btn-success:hover {
+                background-color: #155724;
+                transform: translateY(-2px);
+            }
+
+
+    .btn-warning {
+        background-color: #efb11d;
+        border-color: #efb11d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-warning:hover {
+            background-color: #d19b17;
+            transform: translateY(-2px);
+        }
+
+    .patient-info {
+        margin: auto;
+        width: 80%;
+    }
+
+    .larger-text {
+        font-size: larger;
+    }
+</style>

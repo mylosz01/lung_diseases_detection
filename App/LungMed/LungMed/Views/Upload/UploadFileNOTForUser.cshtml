@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "Upload File";
+}
+
+<h2 class="text-center my-4">Upload File</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form enctype="multipart/form-data" asp-action="UploadFileNOTForUser" method="post" class="shadow p-4 rounded bg-light custom-form" id="uploadForm">
+                <div class="form-group">
+                    <label for="file" class="form-label">Choose a file to upload:</label>
+                    <input type="file" class="form-control" id="file" name="file" required>
+                    <div id="errorMessage"></div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mt-3" onclick="showLoadingMessage()">Upload</button>
+                </div>
+            </form>
+
+            <div id="loadingMessage" class="alert alert-loading text-center mt-3" style="display:none;">
+                <strong>Preparing model result...</strong>
+            </div>
+
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-success mt-3 text-center">
+                    <strong>@ViewBag.Message</strong>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    function showLoadingMessage() {
+        if (!validateForm()) {
+            return;
+        }
+        document.getElementById('uploadForm').style.display = 'none';
+        document.getElementById('loadingMessage').style.display = 'block';
+        // ukrycie komunikatu sukcesu
+        document.querySelector('.alert-success').style.display = 'none';
+    }
+
+    function validateForm() {
+        var fileInput = document.getElementById('file');
+        if (!fileInput.value) {
+            var errorMessage = document.getElementById('errorMessage');
+            errorMessage.innerText = 'Please choose a file to upload.';
+            errorMessage.style.color = 'red';
+            return false;
+        }
+        return true;
+    }
+</script>
+
+
+<style>
+
+    #errorMessage {
+        color: red;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    .custom-form {
+        background-color: #f7f9fc;
+        border: 1px solid #d1d8e0;
+    }
+
+        .custom-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-form .form-label {
+            font-weight: bold;
+            color: #4a4a4a;
+        }
+
+        .custom-form .form-control {
+            border-radius: 0.25rem;
+            border: 1px solid #ced4da;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+            .custom-form .form-control:focus {
+                border-color: #80bdff;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            }
+
+    .btn-primary {
+        background-color: #d6536d;
+        border-color: #d6536d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #c4455c;
+            transform: translateY(-2px);
+        }
+
+
+
+    .btn-secondary {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-secondary:hover {
+            background-color: #6c757d;
+            transform: translateY(-2px);
+        }
+
+    .alert-success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+
+        .alert-success strong {
+            color: #155724;
+        }
+
+    .alert-loading {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+
+        .alert-loading strong {
+            color: #155724;
+        }
+</style>

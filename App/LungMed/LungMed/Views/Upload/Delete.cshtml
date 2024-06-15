@@ -5,35 +5,189 @@
 }
 
 
-<h1>Delete</h1>
+<h2 class="text-center my-4">Delete Recording</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Patient</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FileName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FileName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DateAdded)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DateAdded)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Patient)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Patient.FullNameWithIdAndPersonal)
-        </dd>     
-    </dl>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h3 class="text-center">Are you sure you want to delete this?</h3>
+            <div class="shadow p-4 rounded bg-light custom-form">
+                <div class="patient-info mb-4 p-1 rounded text-center">
+                    <h5>Patient Information</h5>
+                    <p><strong><span class="larger-text">@Html.Raw(ViewBag.PatientDetails)</span></strong></p>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <h4>Recording</h4>
+                        <hr />
+                        <dl class="row">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.FileName)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.FileName)
+                            </dd>
+                        </dl>
 
-    <form asp-action="Delete">
-        <a asp-action="Index" class="btn btn-primary push-left">Back to List</a>
-        <button type="submit" class="btn btn-danger">Delete Recording</button>
-    </form>
+                        <dl class="row">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.DateAdded)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.DateAdded)
+                            </dd>
+                        </dl>
+
+                        <dl class="row">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.ModelResult)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.ModelResult)
+                            </dd>
+                        </dl>
+
+
+                        <dl class="row">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.DoctorApprove)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @if(Model.DoctorApprove == true)
+                                {
+                                    <text>Approved</text>
+                                }
+                                else if(Model.DoctorApprove == false)
+                                {
+                                    <text>Not Approved</text>
+                                }
+                                else
+                                {
+                                    <text>Unknown</text>                                
+                                }
+                            </dd>
+                        </dl>
+
+                        <dl class="row">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.ModificationDate)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.ModificationDate)
+                            </dd>
+
+
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <form asp-action="Delete" method="post">
+                        <a asp-action="Index" class="btn btn-secondary mt-3">Back to List</a>
+                        <button type="submit" class="btn btn-danger mt-3">Delete Recording</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
+
+
+<style>
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .custom-form {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+
+        .custom-form .form-group {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .custom-form .form-label {
+            font-weight: bold;
+            color: #4a4a4a;
+        }
+
+        .custom-form .form-control {
+            border-radius: 0.25rem;
+            border: 1px solid #ced4da;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+            .custom-form .form-control:focus {
+                border-color: #80bdff;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            }
+
+    .btn-primary {
+        background-color: #d6536d;
+        border-color: #d6536d;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #c4455c;
+            transform: translateY(-2px);
+        }
+
+    .btn-secondary {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+
+    .alert-success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+
+        .alert-success strong {
+            color: #155724;
+        }
+
+    .btn-danger {
+        background-color: #e74c3c;
+        border-color: #e74c3c;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+    .patient-info {
+        margin: auto; /* To center horizontally */
+        width: 80%; /* Adjust width as needed */
+    }
+
+    .larger-text {
+        font-size: larger; /* Make text larger */
+    }
+
+    .card-body dl.row dd {
+        word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+        word-break: break-all; /* Break long words if they cannot wrap */
+        white-space: normal; /* Allow the text to wrap normally */
+    }
+
+</style>
+

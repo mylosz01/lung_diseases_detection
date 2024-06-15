@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ROFUSvaxKt16jOFPqAQa13ZIIHvadAUM9wMds4at29c3cuilpj/loX/mCAJlN3ecXLjMrNCNbpHEnl3OHxQR4w==",
+  "dgSpecHash": "TJqPBX2WO8QAZ8QzN2rdxJ0iXHVt1RYMqX5bcC3j5OCm9bEA533zKL6yrj2DwLK04TXCaN2Rb9n2lQoZYDcOYQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Zuzanna\\Desktop\\LungMed\\LungMed\\LungMed\\LungMed.csproj",
+  "projectFilePath": "C:\\Users\\Zuzanna\\LungMed_final\\LungMed\\LungMed\\LungMed.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Zuzanna\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Zuzanna\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

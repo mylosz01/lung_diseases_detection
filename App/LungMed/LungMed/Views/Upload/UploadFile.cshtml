@@ -7,16 +7,21 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <form enctype="multipart/form-data" asp-action="UploadFile" method="post" class="shadow p-4 rounded bg-light custom-form">
+            <form enctype="multipart/form-data" asp-action="UploadFile" method="post" class="shadow p-4 rounded bg-light custom-form" id="uploadForm">
                 <div class="form-group">
                     <label for="file" class="form-label">Choose a file to upload:</label>
                     <input type="file" class="form-control" id="file" name="file" required>
+                    <div id="errorMessage"></div>
                 </div>
                 <div class="text-center">
                     <a asp-action="Index" class="btn btn-secondary mt-3">Back to List</a>
-                    <button type="submit" class="btn btn-primary mt-3">Upload</button>                   
+                    <button type="submit" class="btn btn-primary mt-3" onclick="showLoadingMessage()">Upload</button>                   
                 </div>
             </form>
+
+            <div id="loadingMessage" class="alert alert-loading text-center mt-3" style="display:none;">
+                <strong>Preparing model result...</strong>
+            </div>
 
             @if (ViewBag.Message != null)
             {
@@ -28,7 +33,37 @@
     </div>
 </div>
 
+<script>
+    function showLoadingMessage() {
+        if (!validateForm()) {
+            return;
+        }
+        document.getElementById('uploadForm').style.display = 'none';
+        document.getElementById('loadingMessage').style.display = 'block';
+        // ukrycie komunikatu sukcesu
+        document.querySelector('.alert-success').style.display = 'none';
+    }
+
+    function validateForm() {
+        var fileInput = document.getElementById('file');
+        if (!fileInput.value) {
+            var errorMessage = document.getElementById('errorMessage');
+            errorMessage.innerText = 'Please choose a file to upload.';
+            errorMessage.style.color = 'red';
+            return false;
+        }
+        return true;
+    }
+</script>
+
+
 <style>
+
+    #errorMessage {
+        color: red;
+        font-weight: bold;
+        margin-top: 5px;
+    }
     body {
         background-color: #f7f9fc;
         font-family: 'Arial', sans-serif;
@@ -72,7 +107,7 @@
     }
 
         .btn-primary:hover {
-            background-color: #d6536d;
+            background-color: #c4455c;
             transform: translateY(-2px);
         } 
 
@@ -92,6 +127,16 @@
     }
 
         .alert-success strong {
+            color: #155724;
+        }
+
+    .alert-loading {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+
+        .alert-loading strong {
             color: #155724;
         }
 </style>

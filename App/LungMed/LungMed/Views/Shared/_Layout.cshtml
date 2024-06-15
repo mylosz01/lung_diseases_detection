@@ -65,6 +65,12 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="HealthCards" asp-action="Index">Health Cards</a>
                             </li>
                         }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Upload" asp-action="UploadFileNOTForUser">Try our model</a>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

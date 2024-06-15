@@ -8,6 +8,7 @@ namespace LungMed.Models
     {
         public int Id { get; set; }
         public string FileName { get; set; }
+
         public byte[] FileContent { get; set; }
 
         [ForeignKey("Patient")]
@@ -19,5 +20,14 @@ namespace LungMed.Models
         [Required]
         [Display(Name = "Upload Date")]
         public DateTime DateAdded { get; set; } = DateTime.Now;
+
+        [Display(Name = "Model Result")]
+        public string ModelResult { get; set; }
+
+        [Display(Name = "Doctor Approval")]
+        public bool? DoctorApprove { get; set; }
+
+        [Display(Name = "Modification Date")]
+        public DateTime? ModificationDate { get; set; }
     }
 }

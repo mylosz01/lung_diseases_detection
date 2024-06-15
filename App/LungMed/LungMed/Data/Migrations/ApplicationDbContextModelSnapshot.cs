@@ -136,7 +136,7 @@ namespace LungMed.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Doctor", (string)null);
+                    b.ToTable("Doctor");
                 });
 
             modelBuilder.Entity("LungMed.Models.HealthCard", b =>
@@ -180,7 +180,7 @@ namespace LungMed.Data.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("HealthCard", (string)null);
+                    b.ToTable("HealthCard");
                 });
 
             modelBuilder.Entity("LungMed.Models.Patient", b =>
@@ -207,11 +207,11 @@ namespace LungMed.Data.Migrations
 
                     b.Property<string>("PersonalNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Sex")
                         .HasColumnType("int");
@@ -220,7 +220,13 @@ namespace LungMed.Data.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("Patient", (string)null);
+                    b.HasIndex("PersonalNumber")
+                        .IsUnique();
+
+                    b.HasIndex("PhoneNumber")
+                        .IsUnique();
+
+                    b.ToTable("Patient");
                 });
 
             modelBuilder.Entity("LungMed.Models.Recording", b =>
@@ -234,6 +240,9 @@ namespace LungMed.Data.Migrations
                     b.Property<DateTime>("DateAdded")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool?>("DoctorApprove")
+                        .HasColumnType("bit");
+
                     b.Property<byte[]>("FileContent")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
@@ -242,6 +251,13 @@ namespace LungMed.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ModelResult")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ModificationDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("PatientId")
                         .HasColumnType("int");
 
@@ -249,7 +265,7 @@ namespace LungMed.Data.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("Recording", (string)null);
+                    b.ToTable("Recording");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

@@ -13,7 +13,8 @@ namespace ModelPredict
     {
         public string pathToAudioFile;
         //do ustawienia we własnym zakresie zależnie od maszyny
-        private const string interpreterPath = @"D:\\Python\\lung_diseases_detection\\.venv\\Scripts\\python.exe";
+        //private const string interpreterPath = @"D:\\Python\\lung_diseases_detection\\.venv\\Scripts\\python.exe";
+        private const string interpreterPath = @"C:\\Users\\Zuzanna\\AppData\\Local\\Programs\\Python\\Python311\\python.exe";
         private string scriptPath;
         private string filePathPythonArgument;
 
@@ -23,13 +24,13 @@ namespace ModelPredict
             //Tworzenie ścieżki do pliku
             this.pathToAudioFile = Path.Combine(toSavePath, filename);
             //Tworzenie ścieżki dla skryptu uruchamiającego
-            scriptPath = Path.Combine(Environment.CurrentDirectory, @"Prediction_Model\\Python_Scripts\\predict_model.py");
+            scriptPath = Path.Combine(Environment.CurrentDirectory, @"Prediction_Model\Python_Scripts\predict_model.py");
             filePathPythonArgument = Path.Combine($"Audio\\", filename);
         }
 
-        public string GetModelResultsFromPythonScripts() 
+        public string GetModelResultsFromPythonScripts()
         {
-            string arguments = $"\"{scriptPath}\" {string.Join(" ",pathToAudioFile)}";
+            string arguments = $"\"{scriptPath}\" {string.Join(" ", pathToAudioFile)}";
 
             //Configure python process
             ProcessStartInfo psi = new ProcessStartInfo
@@ -43,9 +44,9 @@ namespace ModelPredict
             try
             {
                 string result;
-                using(Process process = Process.Start(psi)) 
+                using (Process process = Process.Start(psi))
                 {
-                    using(System.IO.StreamReader reader = process.StandardOutput)
+                    using (System.IO.StreamReader reader = process.StandardOutput)
                     {
                         //reader czyta wynik modelu z stdout skryptu python. 
                         //Skrypt pythona wywołuje print, aby przekazać wynik do C#
@@ -55,7 +56,7 @@ namespace ModelPredict
                 }
                 return result; //zwraca wynik modelu z pliku python w tym miejscu
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("Couldn't run programme");
                 return "Program Execution failed";

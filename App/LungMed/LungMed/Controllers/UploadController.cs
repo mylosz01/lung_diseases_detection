@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using ModelPredict;
 
 namespace LungMed.Controllers
 {
@@ -63,6 +64,63 @@ namespace LungMed.Controllers
 
 
 
+        // GET: Upload/UploadFileNOTForUser
+        [HttpGet]
+        public async Task<IActionResult> UploadFileNOTForUser()
+        {
+            return View();
+        }
+
+        // POST: Upload/UploadFileNOTForUser
+        [HttpPost]
+        public async Task<IActionResult> UploadFileNOTForUser(IFormFile file)
+        {
+
+            try
+            {
+                if (file != null && file.Length > 0)
+                {
+                    // Ustalona nowa nazwa pliku bazująca na imieniu użytkownika
+                    string currentDateTime = DateTime.Now.ToString("ddMMyyyy_HHmmss");
+                    string newFileName = $"{currentDateTime}{Path.GetExtension(file.FileName)}";
+
+                    //Tworzenie folderu do przetwarzania nagrań i ścieżki do pliku
+                    ModelManager manager = new ModelManager(newFileName);
+
+                    //Zapisanie zawartości pliku lokalnie w celu analizy przez model
+                    using (var stream = new FileStream(manager.pathToAudioFile, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+
+                    //W tym miejscu zwracany jest wynik modelu dla danego nagrania
+                    string modelResult = manager.GetModelResultsFromPythonScripts();
+
+                    //Kasowanie pliku po przetworzeniu przez model
+                    if (System.IO.File.Exists(manager.pathToAudioFile))
+                    {
+                        System.IO.File.Delete(manager.pathToAudioFile);
+                    }
+
+                    ViewBag.Message = "Model prediction completed successfully!\n" +
+                        $" Your Results: {modelResult}";
+                }
+                else
+                {
+                    ViewBag.Message = "No file selected or file is empty.";
+                }
+
+                return View();
+            }
+            catch
+            {
+                ViewBag.Message = "File upload failed!";
+                return View();
+            }
+        }
+
+
+
         // GET: Upload/UploadFile
         [HttpGet]
         public async Task<IActionResult> UploadFile()
@@ -101,6 +159,23 @@ namespace LungMed.Controllers
                     string currentDateTime = DateTime.Now.ToString("ddMMyyyy_HHmmss");
                     string newFileName = $"{patient.Id}_{patient.FirstName}{patient.LastName}_{currentDateTime}{Path.GetExtension(file.FileName)}";
 
+                    //Tworzenie folderu do przetwarzania nagrań i ścieżki do pliku
+                    ModelManager manager = new ModelManager(newFileName);
+
+                    //Zapisanie zawartości pliku lokalnie w celu analizy przez model
+                    using (var stream = new FileStream(manager.pathToAudioFile, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+
+                    //W tym miejscu zwracany jest wynik modelu dla danego nagrania
+                    string modelResult = manager.GetModelResultsFromPythonScripts();
+
+                    //Kasowanie pliku po przetworzeniu przez model
+                    if (System.IO.File.Exists(manager.pathToAudioFile))
+                    {
+                        System.IO.File.Delete(manager.pathToAudioFile);
+                    }
 
                     // Odczytanie zawartości pliku do tablicy bajtów
                     using (var memoryStream = new MemoryStream())
@@ -113,7 +188,8 @@ namespace LungMed.Controllers
                         {
                             FileName = newFileName,
                             FileContent = fileContent,
-                            PatientId = patient.Id
+                            PatientId = patient.Id,
+                            ModelResult = modelResult
                         };
 
                         // Dodanie pliku do bazy danych
@@ -121,7 +197,8 @@ namespace LungMed.Controllers
                         await _context.SaveChangesAsync();
                     }
 
-                    ViewBag.Message = "File Uploaded Successfully!";
+                    ViewBag.Message = "File Uploaded Successfully!\n" +
+                        $" Results: {modelResult}";
                 }
                 else
                 {
@@ -153,8 +230,57 @@ namespace LungMed.Controllers
                 return NotFound();
             }
 
+            var doctor = await _context.Doctor.FindAsync(userFile.Patient.DoctorId);
+            ViewBag.DoctorDetails = $"Id: {doctor.Id} - {doctor.FirstName} {doctor.LastName}";
+
             return View(userFile);
         }
+
+        public async Task<IActionResult> Approve(int id)
+        {
+            var recording = await _context.Recording.FindAsync(id);
+            if (recording == null)
+            {
+                return NotFound();
+            }
+
+            recording.DoctorApprove = true;
+            recording.ModificationDate = DateTime.Now;
+
+            _context.Update(recording);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Details), new { id = id });
+        }
+
+        public async Task<IActionResult> Reject(int id)
+        {
+            var recording = await _context.Recording.FindAsync(id);
+            if (recording == null)
+            {
+                return NotFound();
+            }
+
+            recording.DoctorApprove = false;
+            recording.ModificationDate = DateTime.Now;
+
+            _context.Update(recording);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Details), new { id = id });
+        }
+
+        public async Task<IActionResult> DownloadFile(int id)
+        {
+            var recording = await _context.Recording.FindAsync(id);
+            if (recording == null)
+            {
+                return NotFound();
+            }
+
+            return File(recording.FileContent, "application/octet-stream", recording.FileName);
+        }
+
 
         // GET: Upload/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -171,6 +297,8 @@ namespace LungMed.Controllers
             {
                 return NotFound();
             }
+            var patient = await _context.Patient.FindAsync(userFile.PatientId);
+            ViewBag.PatientDetails = $"Id: {patient.Id} - {patient.FirstName} {patient.LastName} {patient.PersonalNumber}";
 
             return View(userFile);
         }
@@ -186,6 +314,8 @@ namespace LungMed.Controllers
                 _context.Recording.Remove(userFile);
                 await _context.SaveChangesAsync();
             }
+            var patient = await _context.Patient.FindAsync(userFile.PatientId);
+            ViewBag.PatientDetails = $"Id: {patient.Id} - {patient.FirstName} {patient.LastName} {patient.PersonalNumber}";
 
             return RedirectToAction(nameof(Index));
         }
