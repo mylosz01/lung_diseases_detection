@@ -12,7 +12,9 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LungMed</a>
+                <div class="navbar-brand">
+                    <img src="~/Images/LungMedLogo.png" class="img-fluid logo" alt="Photo of the clinic" style="width: 130px; height: 60px;">
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -42,9 +44,9 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Upload" asp-action="Index">Recordings</a>
                             </li>
-                            
+
                         }
-                        else if(User.IsInRole("Lekarz"))
+                        else if (User.IsInRole("Lekarz"))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Patients" asp-action="Index">Patients</a>
@@ -111,4 +113,13 @@
         margin-top: 20px;
     }
 
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-brand .logo {
+        width: 140px;
+        height: auto;
+    }
 </style>

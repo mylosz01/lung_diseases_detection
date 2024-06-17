@@ -32,7 +32,7 @@ namespace LungMed.Models
         public int DoctorId { get; set; }
         public Doctor? Doctor { get; set; }
 
-        public string FullNameWithIdAndPersonal => $"Id: {Id} - {FirstName} {LastName} {PersonalNumber}";
+        public string FullNameWithIdAndPersonal => $"{FirstName} {LastName} - {PersonalNumber}";
 
         
     }

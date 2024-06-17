@@ -46,9 +46,11 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
+                        @*
                         <th>
                             @Html.DisplayNameFor(model => model.Patients![0].Id)
                         </th>
+                        *@
                         <th>
                             @Html.DisplayNameFor(model => model.Patients![0].FirstName)
                         </th>
@@ -58,6 +60,7 @@
                         <th>
                             @Html.DisplayNameFor(model => model.Patients![0].PersonalNumber)
                         </th>
+                        @*
                         <th>
                             @Html.DisplayNameFor(model => model.Patients![0].PhoneNumber)
                         </th>
@@ -67,6 +70,7 @@
                         <th>
                             @Html.DisplayNameFor(model => model.Patients![0].Sex)
                         </th>
+                        *@
                         <th>
                             @Html.DisplayNameFor(model => model.Patients![0].DoctorId)
                         </th>
@@ -96,9 +100,11 @@
                         @foreach (var item in Model.Patients!)
                         {
                             <tr>
+                                @*
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Id)
                                 </td>
+                                *@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.FirstName)
                                 </td>
@@ -108,6 +114,7 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.PersonalNumber)
                                 </td>
+                                @*
                                 <td>
                                     @Html.DisplayFor(modelItem => item.PhoneNumber)
                                 </td>
@@ -117,6 +124,7 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Sex)
                                 </td>
+                                *@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.DoctorId)
                                 </td>
@@ -166,12 +174,6 @@
         margin-top: 20px;
     }
 
-    .container {
-        max-width: 1500px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-
     .btn-primary {
         background-color: #d6536d;
         border-color: #d6536d;
@@ -179,10 +181,10 @@
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-        .btn-primary:hover {
-            background-color: #c4455c;
-            transform: translateY(-2px);
-        }
+    .btn-primary:hover {
+        background-color: #c4455c;
+        transform: translateY(-2px);
+    }
 
     .btn-warning {
         background-color: #efb11d;
@@ -191,10 +193,10 @@
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-        .btn-warning:hover {
-            background-color: #d19b17;
-            transform: translateY(-2px);
-        }
+    .btn-warning:hover {
+        background-color: #d19b17;
+        transform: translateY(-2px);
+    }
 
     .btn-danger {
         background-color: #e74c3c;
@@ -202,10 +204,10 @@
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-        .btn-danger:hover {
-            background-color: #c0392b;
-            transform: translateY(-2px);
-        }
+    .btn-danger:hover {
+        background-color: #c0392b;
+        transform: translateY(-2px);
+    }
 
     .card {
         margin-top: 20px;
@@ -238,15 +240,15 @@
         border-collapse: collapse;
     }
 
-        .table th, .table td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
+    .table th, .table td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
 
-        .table th {
-            background-color: #f1f1f1;
-            color: #343a40;
-        }
+    .table th {
+        background-color: #f1f1f1;
+        color: #343a40;
+    }
 
     .table-striped tbody tr:nth-of-type(odd) {
         background-color: #f9f9f9;

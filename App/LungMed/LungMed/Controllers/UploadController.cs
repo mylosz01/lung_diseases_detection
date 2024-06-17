@@ -28,8 +28,51 @@ namespace LungMed.Controllers
             _userManager = userManager;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string LastNameSearch, string PersonalNumberSearch, string sortOrder)
         {
+            var recordings = from r in _context.Recording.Include(r => r.Patient)
+                             select r;
+
+            if (User.IsInRole("Lekarz"))
+            {
+                var user = await _userManager.GetUserAsync(User);
+                recordings = recordings.Where(r => r.Patient.DoctorId == user.DoctorId);
+            }
+            if (User.IsInRole("Pacjent"))
+            {
+                var user = await _userManager.GetUserAsync(User);
+                recordings = recordings.Where(r => r.PatientId == user.PatientId);
+            }
+
+            if (!String.IsNullOrEmpty(LastNameSearch))
+            {
+                recordings = recordings.Where(s => s.Patient.LastName.Contains(LastNameSearch));
+            }
+            if (!String.IsNullOrEmpty(PersonalNumberSearch))
+            {
+                recordings = recordings.Where(s => s.Patient.PersonalNumber.Contains(PersonalNumberSearch));
+            }
+
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            switch (sortOrder)
+            {
+                case "Date":
+                    recordings = recordings.OrderBy(s => s.DateAdded);
+                    break;
+                case "date_desc":
+                    recordings = recordings.OrderByDescending(s => s.DateAdded);
+                    break;
+                default:
+                    recordings = recordings.OrderByDescending(s => s.DateAdded);
+                    break;
+            }
+
+            var recordingViewModel = new RecordingViewModel
+            {
+                Recordings = await recordings.ToListAsync()
+            };
+            return View(recordingViewModel);
+            /*
             var user = await _userManager.GetUserAsync(User);
 
             var recordingsQuery = _context.Recording.Include(r => r.Patient)
@@ -60,6 +103,7 @@ namespace LungMed.Controllers
             }
 
             return View(viewModel);
+            */
         }
 
 
@@ -298,7 +342,7 @@ namespace LungMed.Controllers
                 return NotFound();
             }
             var patient = await _context.Patient.FindAsync(userFile.PatientId);
-            ViewBag.PatientDetails = $"Id: {patient.Id} - {patient.FirstName} {patient.LastName} {patient.PersonalNumber}";
+            ViewBag.PatientDetails = $"{patient.FullNameWithIdAndPersonal}";
 
             return View(userFile);
         }
@@ -315,7 +359,7 @@ namespace LungMed.Controllers
                 await _context.SaveChangesAsync();
             }
             var patient = await _context.Patient.FindAsync(userFile.PatientId);
-            ViewBag.PatientDetails = $"Id: {patient.Id} - {patient.FirstName} {patient.LastName} {patient.PersonalNumber}";
+            ViewBag.PatientDetails = $"{patient.FullNameWithIdAndPersonal}";
 
             return RedirectToAction(nameof(Index));
         }

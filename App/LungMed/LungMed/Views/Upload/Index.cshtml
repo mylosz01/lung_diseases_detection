@@ -4,6 +4,107 @@
     ViewData["Title"] = "Recordings";
 }
 
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    @if (User.IsInRole("Pacjent"))
+    {
+        <p class="text-center">
+            <a asp-action="UploadFile" class="btn btn-primary">
+                <i class="fa fa-plus"></i> Upload a new recording
+            </a>
+        </p>
+    }
+
+    @if (User.IsInRole("Administrator") || User.IsInRole("Lekarz"))
+    {
+        <form asp-controller="Upload" asp-action="Index" method="get">
+            <div class="row align-items-center">
+                <div class="col-md-2">
+                    <input type="text" asp-for="PersonalNumberSearch" class="form-control" placeholder="Enter personal number..." />
+                </div>
+                <div class="col-md-2">
+                    <input type="text" asp-for="LastNameSearch" class="form-control" placeholder="Enter patient's last name..." />
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-warning">Filter</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location.href='@Url.Action("Index", "Upload")'">Reset</button>
+                </div>
+            </div>
+        </form>
+    }
+
+    @if (Model.Recordings != null && Model.Recordings.Count > 0)
+    {
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Recordings List</h3>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            @*<th>File Name</th>*@
+                            <th>
+                                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.Recordings![0].DateAdded)</a>
+                            </th>
+                            <th>Patient</th>
+                            <th>Personal number</th>
+                            <th>Model Result</th>
+                            <th>Doctor Approve</th>
+                            <th>Modification Date</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var recording in Model.Recordings)
+                        {
+                            <tr>
+                                @*<td>@recording.FileName</td>*@
+                                <td>@recording.DateAdded.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                                <td>@(recording.Patient != null ? recording.Patient.FirstName + " " + recording.Patient.LastName : "Unknown")</td>
+                                <td>@(recording.Patient != null ? recording.Patient.PersonalNumber : "Unknown")</td>
+                                <td>@recording.ModelResult</td>
+                                <td>
+                                    @if (recording.DoctorApprove == true)
+                                    {
+                                        <text>Approved</text>
+                                    }
+                                    else if (recording.DoctorApprove == false)
+                                    {
+                                        <text>Not Approved</text>
+                                    }
+                                    else
+                                    {
+                                        <text>Unknown</text>
+                                    }
+                                </td>
+                                <td>@recording.ModificationDate</td>
+                                <td class="text-center">
+                                    <a asp-action="Details" asp-route-id="@recording.Id" class="btn btn-warning">Details</a>
+                                </td>
+                                <td class="text-center">
+                                    <a asp-action="Delete" asp-route-id="@recording.Id" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p class="no-recordings">No recordings uploaded.</p>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
 <style>
     body {
         background-color: #f7f9fc;
@@ -19,12 +120,6 @@
         margin-top: 20px;
     }
 
-    .container {
-        max-width: 1500px; /* Zwiększenie szerokości kontenera */
-        margin: 0 auto;
-        padding: 20px;
-    }
-
     .btn-primary {
         background-color: #d6536d;
         border-color: #d6536d;
@@ -32,10 +127,10 @@
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-        .btn-primary:hover {
-            background-color: #c4455c;
-            transform: translateY(-2px);
-        }
+    .btn-primary:hover {
+        background-color: #c4455c;
+        transform: translateY(-2px);
+    }
 
     .card {
         margin-top: 20px;
@@ -68,15 +163,15 @@
         border-collapse: collapse;
     }
 
-        .table th, .table td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
+    .table th, .table td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
 
-        .table th {
-            background-color: #f1f1f1;
-            color: #343a40;
-        }
+    .table th {
+        background-color: #f1f1f1;
+        color: #343a40;
+    }
 
     .table-striped tbody tr:nth-of-type(odd) {
         background-color: #f9f9f9;
@@ -89,10 +184,10 @@
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-        .btn-danger:hover {
-            background-color: #c0392b;
-            transform: translateY(-2px);
-        }
+    .btn-danger:hover {
+        background-color: #c0392b;
+        transform: translateY(-2px);
+    }
 
     .no-recordings {
         text-align: center;
@@ -113,85 +208,8 @@
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-        .btn-warning:hover {
-            background-color: #d19b17;
-            transform: translateY(-2px);
-        }
+    .btn-warning:hover {
+        background-color: #d19b17;
+        transform: translateY(-2px);
+    }
 </style>
-
-<div class="container">
-    <h1>@ViewData["Title"]</h1>
-
-    @if (User.IsInRole("Pacjent"))
-    {
-        <p class="text-center">
-            <a asp-action="UploadFile" class="btn btn-primary">
-                <i class="fa fa-plus"></i> Upload a new recording
-            </a>
-        </p>
-    }
-
-    @if (Model.Recordings != null && Model.Recordings.Count > 0)
-    {
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Recordings List</h3>
-            </div>
-            <div class="card-body">
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>File Name</th>
-                            <th>Upload Date</th>
-                            <th>Patient</th>
-                            <th>Model Result</th>
-                            <th>Doctor Approve</th>
-                            <th>Modification Date</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var recording in Model.Recordings)
-                        {
-                            <tr>
-                                <td>@recording.FileName</td>
-                                <td>@recording.DateAdded.ToString("dd/MM/yyyy HH:mm:ss")</td>
-                                <td>@(recording.Patient != null ? recording.Patient.FirstName + " " + recording.Patient.LastName : "Unknown")</td>
-                                <td>@recording.ModelResult</td>
-                                @* <td>@recording.DoctorApprove</td> *@
-                                <td>@if (recording.DoctorApprove == true){
-                                        <text>Approved</text>
-                                }
-                                    else if (recording.DoctorApprove == false)
-                                {
-                                <text>Not Approved</text>
-                                }
-                                else
-                                {
-                                <text>Unknown</text>
-                                }
-                                </td>
-                                <td>@recording.ModificationDate</td>
-                                <td class="text-center">
-                                    <a asp-action="Details" asp-route-id="@recording.Id" class="btn btn-warning">Details</a>
-                                </td>
-                                <td class="text-center">
-                                    <a asp-action="Delete" asp-route-id="@recording.Id" class="btn btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    }
-    else
-    {
-        <p class="no-recordings">No recordings uploaded.</p>
-    }
-</div>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}

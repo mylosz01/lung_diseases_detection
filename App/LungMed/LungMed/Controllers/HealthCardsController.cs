@@ -220,7 +220,7 @@ namespace LungMed.Controllers
                 return NotFound();
             }
             var patient = await _context.Patient.FindAsync(healthCard.PatientId);
-            ViewBag.PatientDetails = $"Id: {patient.Id} - {patient.FirstName} {patient.LastName} {patient.PersonalNumber}";
+            ViewBag.PatientDetails = $"{patient.FullNameWithIdAndPersonal}";
 
             return View(healthCard);
         }
