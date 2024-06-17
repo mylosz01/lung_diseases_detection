@@ -40,8 +40,10 @@
                     <tr>
                         <th>Name</th>
                         <th>Surname</th>
+                        @*
                         <th>Doctor ID</th>
                         <th>Patient ID</th>
+                        *@
                         <th>Role Name</th>
                         <th>Email</th>
                         <th></th>
@@ -61,8 +63,10 @@
                             <tr>
                                 <td>@Html.DisplayFor(modeliteam => item.FirstName)</td>
                                 <td>@Html.DisplayFor(modeliteam => item.LastName)</td>
+                                @*
                                 <td>@Html.DisplayFor(modeliteam => item.DoctorId)</td>
                                 <td>@Html.DisplayFor(modeliteam => item.PatientId)</td>
+                                *@
                                 <td>@Html.DisplayFor(modeliteam => item.Role.Name)</td>
                                 <td>@Html.DisplayFor(modeliteam => item.Email)</td>
                                 <td class="text-center">
