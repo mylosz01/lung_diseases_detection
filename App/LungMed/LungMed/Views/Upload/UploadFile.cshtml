@@ -29,6 +29,17 @@
                     <strong>@ViewBag.Message</strong>
                 </div>
             }
+
+            <div class="mt-4 lung-noise-info">
+                <p>Upload a file containing your lung sounds, and our model will analyze it.</p>
+                <p class="disclaimer">
+                    <strong>Important Note:</strong>
+                </p>
+                <p class="disclaimer">
+                    While our model boasts a 90% accuracy rate, it's not a substitute for professional diagnosis. For a definitive diagnosis, please visit our clinic.
+                </p>
+            </div>
+
         </div>
     </div>
 </div>
@@ -57,6 +68,7 @@
 </script>
 
 
+
 <style>
 
     #errorMessage {
@@ -78,26 +90,26 @@
         border: 1px solid #d1d8e0;
     }
 
-    .custom-form .form-group {
-        margin-bottom: 1.5rem;
-    }
+        .custom-form .form-group {
+            margin-bottom: 1.5rem;
+        }
 
-    .custom-form .form-label {
-        font-weight: bold;
-        color: #4a4a4a;
-    }
+        .custom-form .form-label {
+            font-weight: bold;
+            color: #4a4a4a;
+        }
 
-    .custom-form .form-control {
-        border-radius: 0.25rem;
-        border: 1px solid #ced4da;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
+        .custom-form .form-control {
+            border-radius: 0.25rem;
+            border: 1px solid #ced4da;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
 
-    .custom-form .form-control:focus {
-        border-color: #80bdff;
-        outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
+            .custom-form .form-control:focus {
+                border-color: #80bdff;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            }
 
     .btn-primary {
         background-color: #d6536d;
@@ -106,20 +118,19 @@
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-    .btn-primary:hover {
-        background-color: #c4455c;
-        transform: translateY(-2px);
-    } 
-
+        .btn-primary:hover {
+            background-color: #c4455c;
+            transform: translateY(-2px);
+        }
 
     .btn-secondary {
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-    .btn-secondary:hover {
+        .btn-secondary:hover {
             background-color: #6c757d;
             transform: translateY(-2px);
-    }
+        }
 
     .alert-success {
         background-color: #d4edda;
@@ -127,9 +138,9 @@
         color: #155724;
     }
 
-    .alert-success strong {
-        color: #155724;
-    }
+        .alert-success strong {
+            color: #155724;
+        }
 
     .alert-loading {
         background-color: #d4edda;
@@ -137,7 +148,38 @@
         color: #155724;
     }
 
-    .alert-loading strong {
-        color: #155724;
+        .alert-loading strong {
+            color: #155724;
+        }
+
+    .mt-4 p {
+        font-size: 14px;
+        color: #6c757d;
+        margin-bottom: 0;
     }
+
+    .lung-noise-info {
+        max-width: 500px; /* Adjust as needed */
+        margin: 0 auto; /* Center the container */
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+    }
+
+        .lung-noise-info p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #6c757d;
+        }
+
+    .disclaimer {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+
+        .disclaimer strong {
+            color: #d6536d; /* Red for emphasis */
+        }
 </style>

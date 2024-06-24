@@ -8,6 +8,16 @@
 
 <h2 class="text-center my-4">Delete User</h2>
 
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@error.ErrorMessage</p>
+        }
+    </div>
+}
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

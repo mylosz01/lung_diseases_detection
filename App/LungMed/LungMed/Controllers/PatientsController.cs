@@ -244,7 +244,16 @@ namespace LungMed.Controllers
             var patient = await _context.Patient.FindAsync(id);
             if (patient != null)
             {
+                // CZY ISTNIEJE USER O TYM ID
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.PatientId == patient.Id);
+                if (user != null)
+                {
+                    TempData["ErrorMessage"] = "This patient cannot be deleted. Please ensure that their associated account is also deleted first!";
+                    return RedirectToAction("Delete");
+                }
                 _context.Patient.Remove(patient);
+                _context.HealthCard.RemoveRange(_context.HealthCard.Where(h => h.PatientId == patient.Id));
+                _context.Recording.RemoveRange(_context.Recording.Where(r => r.PatientId == patient.Id));
             }
 
             await _context.SaveChangesAsync();

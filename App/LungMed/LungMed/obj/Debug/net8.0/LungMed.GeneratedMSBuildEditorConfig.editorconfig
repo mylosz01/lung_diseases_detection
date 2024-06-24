@@ -17,215 +17,215 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LungMed
 build_property.RootNamespace = LungMed
-build_property.ProjectDir = C:\Users\maria\OneDrive\Pulpit\LungMed\LungMed\
+build_property.ProjectDir = C:\Users\Zuzanna\LungMed_final\LungMed\LungMed\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\maria\OneDrive\Pulpit\LungMed\LungMed
+build_property.MSBuildProjectDirectory = C:\Users\Zuzanna\LungMed_final\LungMed\LungMed
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Areas/Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Doctors/Create.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Doctors/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Doctors/Delete.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Doctors/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Doctors/Details.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Doctors/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Doctors/Edit.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Doctors/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Doctors/Index.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Doctors/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/HealthCards/Create.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/HealthCards/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhbHRoQ2FyZHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/HealthCards/Delete.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/HealthCards/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhbHRoQ2FyZHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/HealthCards/Details.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/HealthCards/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhbHRoQ2FyZHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/HealthCards/Edit.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/HealthCards/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhbHRoQ2FyZHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/HealthCards/Index.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/HealthCards/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhbHRoQ2FyZHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Home/Index.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Home/Privacy.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Patients/Create.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Patients/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Patients/Delete.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Patients/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Patients/Details.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Patients/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Patients/Edit.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Patients/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Patients/Index.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Patients/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Roles/Create.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Roles/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Roles/Delete.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Roles/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Roles/Edit.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Roles/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Roles/Index.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Roles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Shared/Error.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Upload/Delete.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Upload/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Upload/Details.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Upload/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Upload/Index.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Upload/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Upload/UploadFile.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Upload/UploadFile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkXFVwbG9hZEZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Upload/UploadFileNOTForUser.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Upload/UploadFileNOTForUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkXFVwbG9hZEZpbGVOT1RGb3JVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Users/Create.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Users/CreateAdmin.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Users/CreateAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Users/CreateDoctor.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Users/CreateDoctor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlRG9jdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Users/CreatePatient.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Users/CreatePatient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlUGF0aWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Users/Delete.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Users/Edit.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Users/Index.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/_ViewImports.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/_ViewStart.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/maria/OneDrive/Pulpit/LungMed/LungMed/Views/Shared/_Layout.cshtml]
+[C:/Users/Zuzanna/LungMed_final/LungMed/LungMed/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ges9yh6v07

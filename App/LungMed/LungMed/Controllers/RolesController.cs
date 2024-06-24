@@ -128,7 +128,8 @@ namespace LungMed.Controllers
             var usersInRole = await _userManager.GetUsersInRoleAsync(rola);
             if (usersInRole.Any())
             {
-                return RedirectToAction("Index");
+                TempData["ErrorMessage"] = "This role cannot be deleted because it is currently in use!";
+                return RedirectToAction("Delete");
             }
 
             var finalresult = await _roleManager.DeleteAsync(result);

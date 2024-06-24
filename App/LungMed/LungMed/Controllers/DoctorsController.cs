@@ -167,6 +167,21 @@ namespace LungMed.Controllers
             var doctor = await _context.Doctor.FindAsync(id);
             if (doctor != null)
             {
+                var patients = await _context.Patient.Where(p => p.DoctorId == doctor.Id).ToListAsync();
+                if (patients.Count > 0)
+                {
+                    TempData["ErrorMessage"] = "This doctor cannot be deleted. Please ensure that their associated patients are also deleted first!";
+                    return RedirectToAction("Delete");
+                }
+
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.DoctorId == doctor.Id);
+                if (user != null)
+                {
+                    TempData["ErrorMessage"] = "This doctor cannot be deleted. Please ensure that their associated account is also deleted first!";
+                    return RedirectToAction("Delete");
+                }
+                
+                
                 _context.Doctor.Remove(doctor);
             }
 

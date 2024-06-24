@@ -268,12 +268,73 @@ namespace LungMed.Controllers
         }
 
 
+        //[HttpGet]
+        //public async Task<ActionResult> Delete(string id)
+        //{
+        //    var currentUser = await _userManager.GetUserAsync(User);
+        //    if (currentUser.Id == id)
+        //    {
+        //        return RedirectToAction("Index");
+
+        //    }
+
+        //    var result = await _userManager.FindByIdAsync(id);
+        //    if (result == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var user = new UserViewModel()
+        //    {
+        //        Id = result.Id,
+        //        Email = result.Email,
+        //        FirstName = result.FirstName,
+        //        LastName = result.LastName,
+        //        Password = result.PasswordHash,
+        //        UserName = result.UserName,
+        //        RoleId = result.RoleId
+        //    };
+
+
+        //    ViewBag.RoleName = _context.Roles.FirstOrDefault(r => r.Id == result.RoleId)?.Name;
+
+        //    return View(user);
+        //}
+
+
+        //[HttpPost]
+        //public async Task<ActionResult> Delete(string id, UserViewModel model)
+        //{
+        //    var userToDelete = await _userManager.FindByIdAsync(id);
+        //    if (userToDelete == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var currentUser = await _userManager.GetUserAsync(User);
+        //    if (currentUser.Id == id)
+        //    {
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    var result = await _userManager.DeleteAsync(userToDelete);
+        //    if (result.Succeeded)
+        //    {
+        //        return RedirectToAction("Index");
+        //    }
+        //    else
+        //    {
+        //        return View("Error");
+        //    }
+
+        //}
+
         [HttpGet]
         public async Task<ActionResult> Delete(string id)
         {
             var currentUser = await _userManager.GetUserAsync(User);
             if (currentUser.Id == id)
             {
+                TempData["ErrorMessage"] = "The user who is currently logged in cannot be deleted!";
                 return RedirectToAction("Index");
             }
 
@@ -292,11 +353,11 @@ namespace LungMed.Controllers
                 UserName = result.UserName,
                 RoleId = result.RoleId
             };
+
             ViewBag.RoleName = _context.Roles.FirstOrDefault(r => r.Id == result.RoleId)?.Name;
 
             return View(user);
         }
-
 
         [HttpPost]
         public async Task<ActionResult> Delete(string id, UserViewModel model)
@@ -310,6 +371,7 @@ namespace LungMed.Controllers
             var currentUser = await _userManager.GetUserAsync(User);
             if (currentUser.Id == id)
             {
+                TempData["ErrorMessage"] = "The user who is currently logged in cannot be deleted!";
                 return RedirectToAction("Index");
             }
 
@@ -322,10 +384,10 @@ namespace LungMed.Controllers
             {
                 return View("Error");
             }
-
         }
-        
 
-        
+
+
+
     }
 }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maria\\OneDrive\\Pulpit\\LungMed\\LungMed\\LungMed.csproj": {}
+    "C:\\Users\\Zuzanna\\LungMed_final\\LungMed\\LungMed\\LungMed.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maria\\OneDrive\\Pulpit\\LungMed\\LungMed\\LungMed.csproj": {
+    "C:\\Users\\Zuzanna\\LungMed_final\\LungMed\\LungMed\\LungMed.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maria\\OneDrive\\Pulpit\\LungMed\\LungMed\\LungMed.csproj",
+        "projectUniqueName": "C:\\Users\\Zuzanna\\LungMed_final\\LungMed\\LungMed\\LungMed.csproj",
         "projectName": "LungMed",
-        "projectPath": "C:\\Users\\maria\\OneDrive\\Pulpit\\LungMed\\LungMed\\LungMed.csproj",
-        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maria\\OneDrive\\Pulpit\\LungMed\\LungMed\\obj\\",
+        "projectPath": "C:\\Users\\Zuzanna\\LungMed_final\\LungMed\\LungMed\\LungMed.csproj",
+        "packagesPath": "C:\\Users\\Zuzanna\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Zuzanna\\LungMed_final\\LungMed\\LungMed\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Zuzanna\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

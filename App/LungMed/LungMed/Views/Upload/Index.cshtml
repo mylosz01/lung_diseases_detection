@@ -35,8 +35,8 @@
         </form>
     }
 
-    @if (Model.Recordings != null && Model.Recordings.Count > 0)
-    {
+
+    
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Recordings List</h3>
@@ -59,46 +59,51 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var recording in Model.Recordings)
+                        @if(Model.Recordings == null || !Model.Recordings.Any())
                         {
                             <tr>
-                                @*<td>@recording.FileName</td>*@
-                                <td>@recording.DateAdded.ToString("dd/MM/yyyy HH:mm:ss")</td>
-                                <td>@(recording.Patient != null ? recording.Patient.FirstName + " " + recording.Patient.LastName : "Unknown")</td>
-                                <td>@(recording.Patient != null ? recording.Patient.PersonalNumber : "Unknown")</td>
-                                <td>@recording.ModelResult</td>
-                                <td>
-                                    @if (recording.DoctorApprove == true)
-                                    {
-                                        <text>Approved</text>
-                                    }
-                                    else if (recording.DoctorApprove == false)
-                                    {
-                                        <text>Not Approved</text>
-                                    }
-                                    else
-                                    {
-                                        <text>Unknown</text>
-                                    }
-                                </td>
-                                <td>@recording.ModificationDate</td>
-                                <td class="text-center">
-                                    <a asp-action="Details" asp-route-id="@recording.Id" class="btn btn-warning">Details</a>
-                                </td>
-                                <td class="text-center">
-                                    <a asp-action="Delete" asp-route-id="@recording.Id" class="btn btn-danger">Delete</a>
-                                </td>
+                                <td colspan="13" class="text-center">No recordings found.</td>
                             </tr>
                         }
+                        else
+                        {
+                            @foreach (var recording in Model.Recordings)
+                            {
+                                <tr>
+                                    @*<td>@recording.FileName</td>*@
+                                    <td>@recording.DateAdded.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                                    <td>@(recording.Patient != null ? recording.Patient.FirstName + " " + recording.Patient.LastName : "Unknown")</td>
+                                    <td>@(recording.Patient != null ? recording.Patient.PersonalNumber : "Unknown")</td>
+                                    <td>@recording.ModelResult</td>
+                                    <td>
+                                        @if (recording.DoctorApprove == true)
+                                        {
+                                            <text>Approved</text>
+                                        }
+                                        else if (recording.DoctorApprove == false)
+                                        {
+                                            <text>Not Approved</text>
+                                        }
+                                        else
+                                        {
+                                            <text>Unknown</text>
+                                        }
+                                    </td>
+                                    <td>@recording.ModificationDate</td>
+                                    <td class="text-center">
+                                        <a asp-action="Details" asp-route-id="@recording.Id" class="btn btn-warning">Details</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a asp-action="Delete" asp-route-id="@recording.Id" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        
                     </tbody>
                 </table>
             </div>
         </div>
-    }
-    else
-    {
-        <p class="no-recordings">No recordings uploaded.</p>
-    }
 </div>
 
 @section Scripts {
