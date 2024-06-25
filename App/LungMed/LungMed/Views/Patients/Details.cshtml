@@ -75,7 +75,10 @@
                 </div>
                 <div class="text-center">
                     <a asp-action="Index" class="btn btn-secondary mt-3">Back to List</a>
-                    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning mt-3">Edit</a>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning mt-3">Edit</a>
+                    }                 
                 </div>
             </div>
         </div>

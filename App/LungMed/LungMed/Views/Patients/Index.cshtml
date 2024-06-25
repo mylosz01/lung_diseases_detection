@@ -80,6 +80,10 @@
                         <th>
                             @Html.DisplayNameFor(model => model.Patients![0].Doctor!.LastName)
                         </th>
+                        @if (User.IsInRole("Lekarz"))
+                        {
+                            <th></th>
+                        }
                         @if (User.IsInRole("Administrator"))
                         {
                             <th></th>
@@ -134,6 +138,12 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Doctor!.LastName)
                                 </td>
+                                @if (User.IsInRole("Lekarz"))
+                                {
+                                    <td class="text-center">
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Details</a>
+                                    </td>
+                                }
                                 @if (User.IsInRole("Administrator"))
                                 {
                                     <td class="text-center">

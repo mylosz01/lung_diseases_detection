@@ -49,14 +49,14 @@
                             <th>
                                 <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.Recordings![0].DateAdded)</a>
                             </th>
-                            @if (User.IsInRole("Administrator") || User.IsInRole("Lekarz"))
+                            @if(User.IsInRole("Administrator") || User.IsInRole("Lekarz"))
                             {
                                 <th>Patient</th>
                                 <th>Personal number</th>
-                            }                           
+                            }                      
                             <th>Model Result</th>
                             <th>Doctor Approve</th>
-                            <th>Modification Date</th>
+                            <th>Modification Date</th> 
                             <th></th>
                             <th></th>
                         </tr>
@@ -75,11 +75,11 @@
                                 <tr>
                                     @*<td>@recording.FileName</td>*@
                                     <td>@recording.DateAdded.ToString("dd/MM/yyyy HH:mm:ss")</td>
-                                    @if (User.IsInRole("Administrator") || User.IsInRole("Lekarz"))
+                                    @if(User.IsInRole("Administrator") || User.IsInRole("Lekarz"))
                                     {
                                         <td>@(recording.Patient != null ? recording.Patient.FirstName + " " + recording.Patient.LastName : "Unknown")</td>
                                         <td>@(recording.Patient != null ? recording.Patient.PersonalNumber : "Unknown")</td>
-                                    }                                   
+                                    }
                                     <td>@recording.ModelResult</td>
                                     <td>
                                         @if (recording.DoctorApprove == true)

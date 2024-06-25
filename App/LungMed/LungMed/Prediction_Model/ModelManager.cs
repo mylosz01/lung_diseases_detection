@@ -14,7 +14,7 @@ namespace ModelPredict
         public string pathToAudioFile;
         //do ustawienia we własnym zakresie zależnie od maszyny
         //private const string interpreterPath = @"D:\\Python\\lung_diseases_detection\\.venv\\Scripts\\python.exe";
-        private const string interpreterPath = @"C:\\Python312\\python.exe";
+        private const string interpreterPath = @"C:\\Users\\Zuzanna\\AppData\\Local\\Programs\\Python\\Python311\\python.exe";
         private string scriptPath;
         private string filePathPythonArgument;
 

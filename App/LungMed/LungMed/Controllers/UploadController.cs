@@ -67,6 +67,7 @@ namespace LungMed.Controllers
                     break;
             }
 
+
             var recordingViewModel = new RecordingViewModel
             {
                 Recordings = await recordings.ToListAsync()
